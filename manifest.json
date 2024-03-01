@@ -1,0 +1,64 @@
+{
+  "background_color": "#008069",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "WhatsApp Emulador",
+  "orientation": "portrait",
+  "scope": "./",
+  "short_name": "IZap",
+  "start_url": "./chat.html",
+  "theme_color": "#008069",
+  "icons": [
+    {
+      "src": "icons/android/android-launchericon-512-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "icons/android/android-launchericon-192-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/android/android-launchericon-144-144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "icons/android/android-launchericon-96-96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "icons/android/android-launchericon-72-72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "icons/android/android-launchericon-48-48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    }
+  ],
+  "id": "IZap 0.1",
+  "description": "Simulação para fins de testar redesign do aplicativo WhatsApp para idosos",
+  "lang": "pt",
+  "display_override": [
+    "standalone",
+    "window-controls-overlay"
+  ],
+  "screenshots": [
+    {
+      "src": "icons/narrow.png",
+      "type": "image/png",
+      "sizes": "346x337",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "icons/wide.png",
+      "type": "image/png",
+      "sizes": "320x461",
+      "form_factor": "wide"
+    }
+  ]
+}

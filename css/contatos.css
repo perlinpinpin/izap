@@ -1,0 +1,42 @@
+
+.nome {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    fill: #000000;   
+}
+
+.status {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    fill: #6B6A6A;   
+}
+
+.menu-item {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    fill: #000000; 
+}
+
+.menu-categoria {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    fill: #999999; 
+}
+
+#label-contatos {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    fill: #ffffff; 
+}
+
+#label-contatos-contatos {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    fill: #ffffff;
+}

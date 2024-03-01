@@ -1,0 +1,64 @@
+
+.nome_chat {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    fill: black;
+}
+.ultimo_chat {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    fill: #6B6A6A;
+}
+.ultimo_time {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    fill: #999999;
+}
+.label_zap {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    fill: #FFFFFF;
+}
+.font_nova_conv {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    fill: #F9F9F9;
+}
+.aba_ativa {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    fill: #FFFFFF;
+}
+.aba_inativa {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    fill: #81B8B2;
+}
+
+#sel-nb-selecionados {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    fill: #FFFFFF;
+}
+
+.sel-item-label {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    fill: #FBF3F3; 
+}
+
+.outros-item-label {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    fill: #000000;
+}

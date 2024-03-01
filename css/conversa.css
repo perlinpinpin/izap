@@ -1,0 +1,298 @@
+.nome {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    fill: white;   
+}
+
+.visto-ultimo {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    fill: white;    
+}
+
+.menu-arquivo-label {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    fill: #080808;
+}
+
+.menu-selecionado-label {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    fill: #FBF3F3;
+}
+
+#label-nb-selecionados {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    fill: #FFFFFF;
+}
+
+.msg-txt {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #444;
+    display: inline-block;
+}
+
+.msg-time {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #999;
+    position: relative;
+    margin-left: 5px;
+    top:10px;
+    display: inline-block;
+}
+
+.msg-img-time-in {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #eeeeee;
+    position: absolute;
+    right: 12px;
+    bottom: 8px;
+}
+
+.msg-img-time-out {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #eeeeee;
+    position: absolute;
+    right: 36px;
+    bottom: 8px;
+}
+
+.msg-img-lido-out {
+    position: absolute;
+    right: 12px;
+    bottom: 9px;
+}
+
+.menu-closed {
+    translate: 0 260px;
+    transition: 0.2s;
+}
+
+.menu-open {
+    translate: 0 0;
+    transition: 0.2s;
+}
+
+.conversa-closed {
+    position: absolute;
+    top: 84px;
+    height: 634px;
+    max-height: 634px;
+    overflow: auto;
+    width: 380px;
+    margin-left: 5px;
+}
+
+.conversa-opened {
+    max-height: 374px;
+    transition: 0.2s;
+}
+
+.div-digitacao {
+    position:absolute;
+    /* top: 734px; */
+    display:flex;
+    align-items:end;
+}
+
+.div-digitacao-inter {
+    background:#ffffff;
+    width:310;
+    border-radius:20px;
+    margin-left:5px;
+    margin-right:4px;
+    padding-top:5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 5px;
+    display:flex;
+}
+
+.digitacao-input {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #221B15;
+    border:none;
+    margin-left: 4px;
+    width: 222px;
+    display: inline-block;
+    margin-left: 8px;
+    padding-top: 4px;
+}
+
+.digitacao-enviar {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 18px;
+    background: #008069;
+    color:white;
+    padding: 8px 5px 8px 5px;
+
+}
+
+.digitacao-input:focus {
+    outline: 0;
+}
+
+#nao_implementado {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    position: absolute;
+    border-radius: 15px;
+    left: 100px;
+    top: 200px;
+    height: 90px;
+    max-height: 90px;
+    width: 190px;
+    max-width: 190px;
+    background-color: #FFDDDD;
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+}
+
+#div-audio-unlocked {
+    position:absolute;
+    top: 734px; 
+    display:flex;
+    align-items:center;
+    background:#ffffff;
+    max-height: 30px;
+    border-radius:20px;
+    margin-left:5px;
+    margin-right:4px;
+    padding-top:8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 8px;
+}
+
+#div-audio-tolock {
+    position:absolute;
+    top: 624px; 
+    background:#ffffff;
+    height: 150px;
+    width: 30px;
+    border-radius: 20px;
+    margin-left: 5px;
+    right: 10px;
+}
+
+#duracao-unlock {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: black;
+    margin-right:12px;
+}
+
+#deslize-label {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: black;
+    margin-left:12px;
+    margin-right: 40px;
+}
+
+#icone-microfone {
+    position:absolute;
+    background: #02A882;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.microfone-aberto {
+    top: 720px; 
+    right: 0px;
+    width: 60px;
+    height: 60px;
+}
+
+.microfone-fechado {
+    top: 734px; 
+    right: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+#label-control-audio {
+    position:absolute;
+    top: 545px; 
+    background:#ffffff;
+    border-radius: 20px;
+    margin-left: 5px;
+    right: 10px;
+    width: 150px;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    color: black;
+    text-align: center;
+}
+
+#audio-lock {
+    position:absolute;
+    top: 670px; 
+    background:#ffffff;
+    max-height: 109px;
+    height: 190px;
+    max-width: 366px;
+    border-radius:18px;
+    padding-top:8px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+#recorder {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 22px;
+    color: black;
+    margin-right:12px;
+}
+
+#waves {
+    margin-left:12px;
+}
+
+#controle-recorder {
+    display: flex;
+    justify-content: space-between;
+}
+
+#controle-recorder-label {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+#controle-recorder-enviar {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    background-color: #008069;
+    padding: 2px 10px 2px 10px;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+}

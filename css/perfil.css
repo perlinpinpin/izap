@@ -1,0 +1,27 @@
+.conteudo {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    fill: black;   
+}
+
+.label {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    fill: black;   
+}
+
+.orientacao {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    fill: black;   
+}
+
+#label-trocar {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    fill: white;   
+}
