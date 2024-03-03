@@ -14,6 +14,23 @@
     <script type="text/javascript" charset="UTF-8" src="assets/js/global.js"></script>
     <script type="text/javascript" charset="UTF-8" src="assets/js/dados/users.js"></script>
     <script type="text/javascript" charset="UTF-8" src="assets/js/chat.js"></script>
+    <script>
+        async function subscribe () {
+            Notification.requestPermission ().then (
+                perm => {
+                    if (perm === 'granted') {
+                        new Notification ('Exemplo notif');
+                    }
+                    else {
+                        alert (perm);
+                    }
+                }
+            );
+        }
+        addEventListener ('load', () => {
+            setTimeout (subscribe, 5000);
+        })
+    </script>
 </head>
 <body>
     <div id="adds-html"></div>
