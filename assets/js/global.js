@@ -30,10 +30,10 @@ function headers (pagina) {
     svg += '    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&display=swap" rel="stylesheet">';
     svg += '    <meta name="viewport" content="width=device-width, initial-scale=1.0">';
     svg += '    <title>' + pagina + '</title>';
-    svg += '    <link rel="stylesheet" href="css/global.css">';
-    svg += '    <link rel="stylesheet" href="css/' + pagina + '.css">';
-    svg += '    <script charset="UTF-8" src="js/dados/users.js"></script>';
-    svg += '    <script charset="UTF-8" src="js/' + pagina + '.js"></script>';
+    svg += '    <link rel="stylesheet" href="assets/css/global.css">';
+    svg += '    <link rel="stylesheet" href="assets/css/' + pagina + '.css">';
+    svg += '    <script charset="UTF-8" src="assets/js/dados/users.js"></script>';
+    svg += '    <script charset="UTF-8" src="assets/js/' + pagina + '.js"></script>';
     svg += '</head>';
     svg += '<body>';
     svg += '    <div id="adds-html"></div>';

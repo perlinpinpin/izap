@@ -22,7 +22,7 @@
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_0_1" transform="matrix(0.00390224 0 0 0.003125 -0.124359 0)"/>
 </pattern>
-<image id="image0_0_1" width="320" height="320" xlink:href="img/0.png"/>
+<image id="image0_0_1" width="320" height="320" xlink:href="assets/img/0.png"/>
 </defs>
 </svg>
 

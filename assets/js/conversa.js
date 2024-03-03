@@ -292,12 +292,12 @@ function criarMsg (msg) {
         let content = '';
         content += '<div style="display: flex; align-items:center">';
         if (msg.fluxo == 'out') {
-            content += '    <span style="border-radius: 20px; background-image:url(\'img/0.png\'); background-size: 40px 40px; width:40px; height:40px; display:inline-block"></span>';
-            content += '    <img id="play_pause_btn_' + msg.mess_id + '" onclick="swicthPalying(\'' + msg.mess_id + '\')" src="img/play.svg" style="margin-left: 5px; margin-right: 5px">';
+            content += '    <span style="border-radius: 20px; background-image:url(\'assets/img/0.png\'); background-size: 40px 40px; width:40px; height:40px; display:inline-block"></span>';
+            content += '    <img id="play_pause_btn_' + msg.mess_id + '" onclick="swicthPalying(\'' + msg.mess_id + '\')" src="assets/img/play.svg" style="margin-left: 5px; margin-right: 5px">';
             content += '    <span id="' + msg.mess_id + '"></span>';
         }
         else {
-            content += '    <img id="play_pause_btn_' + msg.mess_id + '" onclick="swicthPalying(\'' + msg.mess_id + '\')" src="img/play.svg" style="margin-right: 5px">';
+            content += '    <img id="play_pause_btn_' + msg.mess_id + '" onclick="swicthPalying(\'' + msg.mess_id + '\')" src="assets/img/play.svg" style="margin-right: 5px">';
             content += '    <span id="' + msg.mess_id + '"></span>';
             content += '    <span style="border-radius: 20px; background-image:url(\'' + users [id].foto +'\'); background-size: 40px 40px; width:40px; height:40px; display:inline-block; margin-left: 5px;"></span>';
         }
@@ -526,5 +526,5 @@ sampleRecordingAction = (chunks, time) => {
 
 window.addEventListener ('load', () => {
     criarConversa ();
-    setTimeout (() => {createPlayer ('waves', 'img/conv/audio1.ogg', 290, 50, false);}, 100);
+    setTimeout (() => {createPlayer ('waves', 'assets/conv/audio1.ogg', 290, 50, false);}, 100);
 });

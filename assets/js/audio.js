@@ -88,12 +88,12 @@ let playing = false;
 function swicthPalying (ancora) {
     const btn = document.getElementById ('play_pause_btn_' + ancora);
     if (playing) {
-        btn.src = 'img/play.svg';
+        btn.src = 'assets/img/play.svg';
         playing = false;
         audios [ancora].pause ();
     }
     else {
-        btn.src = 'img/pause.svg';
+        btn.src = 'assets/img/pause.svg';
         playing = true;
         audios [ancora].play ();
     }

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" charset="UTF-8" src="js/global.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="js/wavesurfer.min.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="assets/js/global.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="assets/js/wavesurfer.min.js"></script>
     <title>Test audio</title>
 </head>
-<script src="js/audio.js"></script>
+<script src="assets/js/audio.js"></script>
 <script>
-    setTimeout (() => {createPlayer ('waves', 'img/conv/audio1.ogg', 300, 50, false);}, 100);
+    setTimeout (() => {createPlayer ('waves', 'assets/conv/audio1.ogg', 300, 50, false);}, 100);
 </script>
 <body>
     <button onclick="startRec ()" type="button">Start</button>
@@ -18,13 +18,13 @@
     <button onclick="resumeRec ()" type="button">Resume</button>
 
     <div style="display: flex;">
-        <img id="play_pause_btn_waves" onclick="swicthPalying('waves')" src="img/play.svg" style="margin-right: 2px">
+        <img id="play_pause_btn_waves" onclick="swicthPalying('waves')" src="assets/img/play.svg" style="margin-right: 2px">
         <span id="waves">
 
         </span>
     </div>
     <div>
-        <img src="img/audio.png" alt="">
+        <img src="assets/img/audio.png" alt="">
     </div>
     
 </body>
