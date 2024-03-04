@@ -20,6 +20,7 @@ const resourceToPrecache = [
     'assets/img/play2.png',
     'assets/img/settings.svg',
     'assets/img/smiley.svg',
+    'assets/img/gravar.svg',
     'assets/conv/img.jpeg',
     'assets/conv/audio1.ogg',
     'assets/conv/audio2.ogg',

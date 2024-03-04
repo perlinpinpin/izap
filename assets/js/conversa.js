@@ -293,11 +293,11 @@ function criarMsg (msg) {
         content += '<div style="display: flex; align-items:center">';
         if (msg.fluxo == 'out') {
             content += '    <span style="border-radius: 20px; background-image:url(\'assets/img/0.png\'); background-size: 40px 40px; width:40px; height:40px; display:inline-block"></span>';
-            content += '    <img id="play_pause_btn_' + msg.mess_id + '" onclick="swicthPalying(\'' + msg.mess_id + '\')" src="assets/img/play.svg" style="margin-left: 5px; margin-right: 5px">';
+            content += '    <img id="play_pause_btn_' + msg.mess_id + '" onclick="swicthPlaying(\'' + msg.mess_id + '\')" src="assets/img/play.svg" style="margin-left: 5px; margin-right: 5px">';
             content += '    <span id="' + msg.mess_id + '"></span>';
         }
         else {
-            content += '    <img id="play_pause_btn_' + msg.mess_id + '" onclick="swicthPalying(\'' + msg.mess_id + '\')" src="assets/img/play.svg" style="margin-right: 5px">';
+            content += '    <img id="play_pause_btn_' + msg.mess_id + '" onclick="swicthPlaying(\'' + msg.mess_id + '\')" src="assets/img/play.svg" style="margin-right: 5px">';
             content += '    <span id="' + msg.mess_id + '"></span>';
             content += '    <span style="border-radius: 20px; background-image:url(\'' + users [id].foto +'\'); background-size: 40px 40px; width:40px; height:40px; display:inline-block; margin-left: 5px;"></span>';
         }
@@ -464,6 +464,7 @@ let locked = false;
 let descartar = false;
 function lock () {
     locked = true;
+    if (!recording) switchPlayPauseRecorder ();
     document.getElementById ('audio-unlock').classList.add ('hide');
     document.getElementById ('audio-lock').classList.remove ('hide');
 }
@@ -506,7 +507,7 @@ function enviarAudio () {
 
 stopRecordingAction = (data, time) => {
     if (time > 1000 && !descartar) {
-        criarAudio (data, time);
+        criarAudio (data, formatTime (time));
     }
     descartar = false;
     locked = false;
@@ -522,6 +523,22 @@ sampleRecordingAction = (chunks, time) => {
     audios ['waves'].loadBlob (blob);
     document.getElementById ('duracao-unlock').innerHTML = formatTime (time);
     document.getElementById ('duracao-lock').innerHTML = formatTime (time);
+}
+
+let recording = true;
+function switchPlayPauseRecorder () {
+    if (recording) {
+        document.getElementById ('recorder-action-icone').src = 'assets/img/gravar.svg';    
+        document.getElementById ('recorder-action-label').innerHTML = 'GRAVAR';
+        pauseRec ();
+        recording = false;
+    }
+    else {
+        resumeRec ();
+        document.getElementById ('recorder-action-icone').src = 'assets/img/pause2.svg';
+        document.getElementById ('recorder-action-label').innerHTML = 'PAUSAR';
+        recording = true;
+    }
 }
 
 window.addEventListener ('load', () => {

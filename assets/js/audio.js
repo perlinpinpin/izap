@@ -34,7 +34,7 @@ function createPlayer (ancora, url, width, height, cursor) {
         height: height
     });
     wavesurfer.on ('finish', () => {
-        swicthPalying (ancora);
+        swicthPlaying (ancora);
     })
     audios [ancora] = wavesurfer;
 }
@@ -85,7 +85,7 @@ function resumeRec () {
 }
 
 let playing = false;
-function swicthPalying (ancora) {
+function swicthPlaying (ancora) {
     const btn = document.getElementById ('play_pause_btn_' + ancora);
     if (playing) {
         btn.src = 'assets/img/play.svg';
