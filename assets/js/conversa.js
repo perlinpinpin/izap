@@ -545,5 +545,5 @@ function switchPlayPauseRecorder () {
 
 window.addEventListener ('load', () => {
     criarConversa ();
-    setTimeout (() => {createPlayer ('waves', 'assets/conv/audio/audio1.ogg', 290, 50, false);}, 100);
+    setTimeout (() => {createPlayer ('waves', 'assets/audio/audio.ogg', 290, 50, false);}, 100);
 });
