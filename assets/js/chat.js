@@ -40,6 +40,7 @@ function mouseUp (id) {
     if (diff < longPressDelay) {
         if (selecionados.length == 0) {
             setTimeout (() => {
+                selecionado.style.fill = '#ffffff';
                 window.location = 'conversa.html?id=' + id;
             }, 150);
         } else {

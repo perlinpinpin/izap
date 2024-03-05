@@ -27,7 +27,7 @@ const resourceToPrecache = [
     'chat.html',
     'configuracoes.html',
     'contatos.html',
-    'assets/js/dados/users.js',
+    'assets/conv/conversations.js',
     'assets/js/audio.js',
     'assets/js/chat.js',
     'assets/js/configuracoes.js',
