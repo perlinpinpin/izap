@@ -451,6 +451,7 @@ function abrirMicrofone (event) {
 }
 
 function fecharMicrofone () {
+    if (locked) return;
     let mic = document.getElementById ('icone-microfone');
     mic.classList.remove ('microfone-aberto');
     mic.classList.add ('microfone-fechado');
@@ -463,6 +464,7 @@ function fecharMicrofone () {
 let locked = false;
 let descartar = false;
 function lock () {
+    loggar ('lock');
     locked = true;
     if (!recording) switchPlayPauseRecorder ();
     document.getElementById ('audio-unlock').classList.add ('hide');
@@ -498,6 +500,7 @@ function dragEnd (event) {
 }
 
 function descartarAudio () {
+    descartar = true;
     stopRec ();
 }
 

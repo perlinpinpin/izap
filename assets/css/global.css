@@ -4,6 +4,10 @@
     touch-action: none;
 }
 
+body {
+    touch-action: none;
+}
+
 .hide {
     display: none;
 }
