@@ -1,12 +1,23 @@
 function execComOpacityFeedback (id, toDo) {
     var svgobj = document.getElementById (id);
-    memFill = svgobj.style.fill;
+    // memFill = svgobj.style.fill;
     svgobj.setAttribute ("fill-opacity","1.0");
     setTimeout (() => {
         svgobj.setAttribute ("fill-opacity","0.0");
         toDo ();
     }, 150);
 }
+
+function execComBckFeedback (id, bckCor, toDo) {
+    var svgobj = document.getElementById (id);
+    let memBckCor = svgobj.style.backgroundColor;
+    svgobj.style.backgroundColor = bckCor;
+    setTimeout (() => {
+        svgobj.style.backgroundColor = memBckCor;
+        toDo ();
+    }, 150);
+}
+
 
 let first = false;
 function naoImplementado () {

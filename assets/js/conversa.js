@@ -1,5 +1,6 @@
 let id = urlParams.get ('id');
 let digitacaoBaseH = 773;
+const conversa = users [id].conversa;
 
 function nome () {
     document.write (users [id].nome);
@@ -22,8 +23,6 @@ function abrirMenuArquivo () {
     anim.classList.add ('menu-open');
     anim = document.getElementById ("espaco-interacao");
     anim.classList.add ('menu-open');
-    // anim = document.getElementById ("conversa");
-    // anim.classList.add ('conversa-opened');
     let conversa = document.getElementById ('conversa');
     const convH = 634 - 260;
     conversa.style.maxHeight = 374 + 'px';
@@ -37,8 +36,6 @@ function fecharMenuArquivo () {
     anim.classList.remove ('menu-open');
     anim = document.getElementById ("espaco-interacao");
     anim.classList.remove ('menu-open');
-    // anim = document.getElementById ("conversa");
-    // anim.classList.remove ('conversa-opened');
     let conversa = document.getElementById ('conversa');
     conversa.style.maxHeight = 634 + 'px';
     conversa.style.height = 634 + 'px';
@@ -91,7 +88,7 @@ function menuSel (item) {
     if (item == 'voltar-sel') execComOpacityFeedback ('voltar-sel-bck', clearSelecao);
     else if (item == 'responder-sel') execComOpacityFeedback ('responder-sel-bck', naoImplementado);
     else if (item == 'favoritar-sel') execComOpacityFeedback ('favoritar-sel-bck', naoImplementado);
-    else if (item == 'info-sel') execComOpacityFeedback ('info-sel-bck', naoImplementado);
+    // else if (item == 'info-sel') execComOpacityFeedback ('info-sel-bck', naoImplementado);
     else if (item == 'apagar-sel') execComOpacityFeedback ('apagar-sel-bck', removeSelecao);
     else if (item == 'encaminhar-sel') execComOpacityFeedback ('encaminhar-sel-bck', naoImplementado);
     else if (item == 'outros-sel') execComOpacityFeedback ('outros-sel-bck', naoImplementado);
@@ -117,15 +114,28 @@ function menuInteracao (item) {
     else if (item == 'microfone') execComOpacityFeedback ('i-microfone-bck', naoImplementado);
 }
 
+function menuApagar (item) {
+    if (item == 'apagar-todos') execComBckFeedback ('apagar-todos', '#eeeeee', () => {
+        document.getElementById ('menu-apagar').classList.add ('hide');
+        apagarSelecao ();
+    });
+    else if (item == 'apagar-para-mim') execComBckFeedback ('apagar-para-mim', '#eeeeee', () => {
+        document.getElementById ('menu-apagar').classList.add ('hide');
+        apagarSelecao ();
+    });
+    else if (item == 'apagar-cancelar') execComBckFeedback ('apagar-cancelar', '#eeeeee', () => {
+        document.getElementById ('menu-apagar').classList.add ('hide');
+        document.getElementById ('cabecalho-conversa-sel').classList.remove ('hide');
+    });
+}
+
 function selImage () {
-    console.log('test');
     document.getElementById ('image-sel').click ();
 }
 
 function imageSelecao (evt) {
     let file = evt.target.files [0];
     if (file) {
-        const conv = document.getElementById ('conversa');
         var reader = new FileReader ();
         reader.onload = function () {
             addNovaMensagem ('mimg', reader.result);
@@ -161,6 +171,34 @@ function manageSelecionados () {
     else {
         document.getElementById ('cabecalho-conversa-sel').classList.add ('hide');
     }
+    let apagados = false;
+    let cvs = users [id].conversa;
+    for (var i = 0; i < selecionados.length; i ++) {
+        for (let j = cvs.length - 1; j >= 0; j --) {
+            if (cvs [j] == selecionados [i].msg) {
+                if (cvs [j].apagada == true) {
+                    apagados = true;
+                    break;
+                }
+            }
+        }
+    }
+
+    if (selecionados.length > 1 || apagados) {
+        document.getElementById ('responder-sel').classList.add ('hide');
+        // document.getElementById ('info-sel').classList.add ('hide');
+        document.getElementById ('encaminhar-sel').classList.add ('hide');
+    } else {
+        document.getElementById ('responder-sel').classList.remove ('hide');
+        // document.getElementById ('info-sel').classList.remove ('hide');
+        document.getElementById ('encaminhar-sel').classList.remove ('hide');
+    }
+    if (apagados) {
+        document.getElementById ('favoritar-sel').classList.add ('hide');
+    }
+    else {
+        document.getElementById ('favoritar-sel').classList.remove ('hide');
+    }
 }
 
 function clearSelecao () {
@@ -171,21 +209,39 @@ function clearSelecao () {
     document.getElementById ('cabecalho-conversa-sel').classList.add ('hide');
 }
 
-function removeSelecao () {
+function apagarSelecao () {
+    let cvs = users [id].conversa;
     for (let i = 0; i < selecionados.length; i++) {
-        let lid = selecionados [i].id;
-        msgid = lid.replace ('mess-', '');
-        let cvs = users [id].conversa;
         for (let j = cvs.length - 1; j >= 0; j --) {
-            if (cvs [j].mess_id == msgid) {
-                cvs.splice (j,1);
+            if (cvs [j] == selecionados [i].msg) {
+                if (cvs [j].apagada == true) {
+                    cvs.splice (j, 1);
+                } else {
+                    cvs [j].apagada = true;
+                }
             }
         }
     }
     selecionados = [];
-    document.getElementById ('cabecalho-conversa-sel').classList.add ('hide');
     criarConversa ();
     usersUpdated ();
+}
+
+function removeSelecao () {
+    document.getElementById ('cabecalho-conversa-sel').classList.add ('hide');
+    let apagados = 0;
+    let cvs = users [id].conversa;
+    for (let i = 0; i < selecionados.length; i++) {
+        for (let j = cvs.length - 1; j >= 0; j --) {
+            if (cvs [j] == selecionados [i].msg) {
+                if (cvs [j].apagada == true) apagados ++;
+            }
+        }
+    }
+    if (apagados != selecionados.length)
+        document.getElementById ('menu-apagar').classList.remove ('hide');
+    else
+        apagarSelecao ();
 }
 
 let itemPressed = false;
@@ -221,6 +277,7 @@ function itemConversaRelease () {
 function criarMsg (msg) {
     let dv = document.createElement ('div');
     dv.id = "mess-" + msg.mess_id;
+    dv.msg = msg;
     dv.style.marginLeft = '2px';
     dv.style.marginRight = '2px';
     dv.style.marginTop = '1px';
@@ -258,7 +315,21 @@ function criarMsg (msg) {
         arrow.style.right = '5px';
     }
     
-    if (msg.tipo == 'txt') {
+    if (msg.apagada) {
+        let content = '';
+        content += '<div style="display:flex;align-items:center;justify-content:center">';
+        content += '    <img src="assets/img/apagado.svg">';
+        content += '    <span class="msg-txt ml-10 mr-5">MESSAGEM APAGADA</span>';
+        content += '    <span class="msg-time">' + msg.hora + '</span>';
+        content += '</div>';        
+        box.innerHTML = content;
+        box.innerHTML = content;
+        box.style.paddingLeft = '10px';
+        box.style.paddingTop = '10px';
+        box.style.paddingRight = '10px';
+        box.style.paddingBottom = '10px';
+    }
+    else if (msg.tipo == 'txt') {
         let content = '';
         for (let i = 0; i < msg.content.length; i++) {
             if (i == msg.content.length - 1) {
@@ -386,6 +457,8 @@ function addNovaMensagem (tipo, content) {
         'content': content,
         'dia': day + '/' + month + '/' + now.getFullYear (),
         'hora': now.getHours () + ':' + minutes,
+        'lida': false,
+        'apagada': false
     };
     users [id].conversa.push (msg);
     users [id].timestamp = new Date ().getTime ();

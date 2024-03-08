@@ -37,8 +37,6 @@
                 <span id="deslize-label">DESLIZE PARA CANCELAR</span>
             </div>
             <div id="div-audio-tolock">
-                <!-- <img src="assets/img/lock.svg">
-                <img src="assets/img/deslize-norte.svg" class="mt-5"> -->
                 <img src="assets/img/deslize-norte.svg" class="mt-10">
             </div>
             <span id="label-control-audio">
@@ -80,6 +78,12 @@
                     ENVIAR
                 </div>
             </div>
+        </div>
+        <div id="menu-apagar" class="hide">
+            <div class="apagar_titulo">DESEJA APAGAR A MENSAGEM?</div>
+            <div onclick="menuApagar('apagar-todos')" id="apagar-todos" class="apagar_btn">APAGAR PARA TODOS</div>
+            <div onclick="menuApagar('apagar-para-mim')" id="apagar-para-mim" class="apagar_btn">APAGAR PARA MIM</div>
+            <div onclick="menuApagar('apagar-cancelar')" id="apagar-cancelar" class="apagar_btn">CANCELAR</div>
         </div>
         <div id="nao_implementado" class="transparento hide">
             FUNCÃO NÃO DISPONÍVEL NESTA VERSÃO
@@ -126,33 +130,33 @@
                         <path id="icone-voltar-sel" d="M8.81665 74.9333C8.81665 75.55 9.01665 76.0667 9.43332 76.4667L15.8333 82.7167C16.2 83.1333 16.6833 83.35 17.25 83.35C17.8333 83.35 18.3333 83.15 18.7333 82.7667C19.1333 82.3833 19.35 81.8833 19.35 81.3C19.35 80.7167 19.15 80.2167 18.7333 79.8167L16 77.0833H33.1667C33.75 77.0833 34.2333 76.8833 34.6167 76.4667C35 76.05 35.1833 75.55 35.1833 74.9667C35.1833 74.3833 35 73.8833 34.6167 73.4667C34.2333 73.05 33.75 72.8333 33.1667 72.8167H16L18.7333 70.05C19.1333 69.65 19.35 69.1667 19.35 68.6167C19.35 68.0333 19.15 67.5333 18.7333 67.1333C18.3167 66.7333 17.8333 66.5 17.2333 66.5C16.7 66.5 16.2167 66.7333 15.8167 67.1833L9.41665 73.4333C9.01665 73.85 8.81665 74.3333 8.81665 74.9333Z" fill="#FFFBFF"/>
                     </g>
                     <text id="label-nb-selecionados" x="43" y="81">1</text>
-                    <g onclick="menuSel('responder-sel')">
+                    <g id="responder-sel" onclick="menuSel('responder-sel')">
                         <rect id="responder-sel-bck" rx="8" x="65" y="46" width="70" height="45" fill="#81B8B2" fill-opacity="0"/>
                         <path id="icone-responder" d="M113.375 81.5625L111.727 79.6811C110.41 78.1781 109.188 77.018 107.504 76.2416C105.945 75.5232 103.988 75.1488 101.394 75.0791V81.0938L89 70.5469L101.394 60V66.0475C105.665 66.2232 108.846 67.6342 110.861 70.2516C112.529 72.4219 113.375 75.4213 113.375 79.1754V81.5625Z" fill="#FEFEFF"/>
                         <text class="menu-selecionado-label" x="58" y="103">RESPONDER</text>
                     </g>
-                    <g onclick="menuSel('favoritar-sel')">
+                    <g id="favoritar-sel" onclick="menuSel('favoritar-sel')" transform="translate(10,0)">
                         <rect id="favoritar-sel-bck" rx="8" x="140" y="46" width="62" height="45" fill="#81B8B2" fill-opacity="0"/>
                         <path id="icone-favoritar" d="M172.5 79.0875L180.225 83.75L178.175 74.9625L185 69.05L176.013 68.2875L172.5 60L168.987 68.2875L160 69.05L166.825 74.9625L164.775 83.75L172.5 79.0875Z" fill="#FEFEFF"/>
                         <text class="menu-selecionado-label" x="138" y="103">FAVORITAR</text>
                     </g>
-                    <g onclick="menuSel('info-sel')">
+                    <!-- <g id="info-sel" onclick="menuSel('info-sel')">
                         <rect id="info-sel-bck" rx="8" x="203" y="46" width="46" height="45" fill="#81B8B2" fill-opacity="0"/>
                         <g id="icone-info">
                             <path d="M227 67.6667C225.845 67.6667 224.856 67.536 224.033 67.2747C223.21 67.0133 222.799 66.6996 222.8 66.3333C222.8 65.9667 223.212 65.6527 224.035 65.3913C224.858 65.13 225.846 64.9996 227 65C228.155 65 229.144 65.1307 229.967 65.392C230.791 65.6533 231.201 65.9671 231.2 66.3333C231.2 66.7 230.788 67.014 229.965 67.2753C229.142 67.5367 228.154 67.6671 227 67.6667ZM227 77C226.125 77 225.381 76.9027 224.768 76.708C224.155 76.5133 223.849 76.2773 223.85 76V70C223.85 69.7222 224.157 69.486 224.77 69.2913C225.383 69.0967 226.126 68.9996 227 69C227.875 69 228.619 69.0973 229.232 69.292C229.846 69.4867 230.151 69.7227 230.15 70V76C230.15 76.2778 229.843 76.514 229.23 76.7087C228.617 76.9033 227.874 77.0004 227 77Z" fill="white"/>
                             <path d="M227 80.5C223.817 80.5 220.765 79.4464 218.515 77.5711C216.264 75.6957 215 73.1522 215 70.5C215 67.8478 216.264 65.3043 218.515 63.4289C220.765 61.5536 223.817 60.5 227 60.5C230.183 60.5 233.235 61.5536 235.485 63.4289C237.736 65.3043 239 67.8478 239 70.5C239 73.1522 237.736 75.6957 235.485 77.5711C233.235 79.4464 230.183 80.5 227 80.5ZM227 58C225.03 58 223.08 58.3233 221.26 58.9515C219.44 59.5797 217.786 60.5004 216.393 61.6612C213.58 64.0054 212 67.1848 212 70.5C212 73.8152 213.58 76.9946 216.393 79.3388C217.786 80.4996 219.44 81.4203 221.26 82.0485C223.08 82.6767 225.03 83 227 83C230.978 83 234.794 81.683 237.607 79.3388C240.42 76.9946 242 73.8152 242 70.5C242 68.8585 241.612 67.233 240.858 65.7165C240.104 64.1999 238.999 62.8219 237.607 61.6612C236.214 60.5004 234.56 59.5797 232.74 58.9515C230.92 58.3233 228.97 58 227 58Z" fill="white"/>
                         </g>
                         <text class="menu-selecionado-label" x="211" y="103">INFO</text>
-                    </g>
-                    <g onclick="menuSel('apagar-sel')">
+                    </g> -->
+                    <g onclick="menuSel('apagar-sel')" transform="translate(-20,0)">
                         <rect id="apagar-sel-bck" rx="8" x="243" y="46" width="55" height="45" fill="#81B8B2" fill-opacity="0"/>
                         <path id="icone-apagar" d="M279.5 62.25H275.125L273.875 61H267.625L266.375 62.25H262V64.75H279.5M263.25 81C263.25 81.663 263.513 82.2989 263.982 82.7678C264.451 83.2366 265.087 83.5 265.75 83.5H275.75C276.413 83.5 277.049 83.2366 277.518 82.7678C277.987 82.2989 278.25 81.663 278.25 81V66H263.25V81Z" fill="#FEFEFF"/>
                         <text class="menu-selecionado-label" x="245" y="103">APAGAR</text>
                     </g>
-                    <g onclick="menuSel('encaminhar-sel')">
+                    <g id="encaminhar-sel" onclick="menuSel('encaminhar-sel')"  transform="translate(-10,0)">
                         <rect id="encaminhar-sel-bck" rx="8" x="305" y="46" width="60" height="45" fill="#81B8B2" fill-opacity="0"/>
                         <path id="icone-encaminhar" d="M326 83L327.555 81.3421C328.798 80.0178 329.95 78.9955 331.54 78.3114C333.011 77.6785 334.857 77.3485 337.305 77.2871V82.587L349 73.2935L337.305 64V69.3288C333.275 69.4837 330.273 70.7269 328.372 73.0333C326.798 74.9457 326 77.5886 326 80.8966V83Z" fill="#FEFEFF"/>
-                        <text class="menu-selecionado-label" x="301" y="103">ENCAMINHAR</text>
+                        <text class="menu-selecionado-label" x="296" y="103">ENCAMINHAR</text>
                     </g>
                     <g onclick="menuSel('outros-sel')">
                         <rect id="outros-sel-bck" rx="20" x="355" y="42" width="38" height="55" fill="#81B8B2" fill-opacity="0"/>

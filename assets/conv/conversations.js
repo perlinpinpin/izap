@@ -26,6 +26,7 @@ let users = [
                 'dia': '28/04/2023',
                 'hora': '8:20',
                 'lido': true,
+                'apagada': false,
             },
             {
                 'mess_id' : 'm002',
@@ -35,6 +36,7 @@ let users = [
                 'dia': '28/04/2023',
                 'hora': '8:45',
                 'lido': true,
+                'apagada': false,
             },
             {
                 'mess_id' : 'm003',
@@ -44,6 +46,7 @@ let users = [
                 'dia': '28/04/2023',
                 'hora': '8:53',
                 'lido': true,
+                'apagada': false,
             },
             {
                 'mess_id' : 'a001',
@@ -53,6 +56,7 @@ let users = [
                 'dia': '30/04/2023',
                 'hora': '15:20',
                 'lido': true,
+                'apagada': false,
             },
             {
                 'mess_id' : 'a002',
@@ -62,6 +66,7 @@ let users = [
                 'dia': '30/04/2023',
                 'hora': '15:20',
                 'lido': true,
+                'apagada': false,
             },
             {
                 'mess_id' : 'm005',
@@ -75,6 +80,7 @@ let users = [
                 'dia': '29/04/2023',
                 'hora': '15:20',
                 'lido': false,
+                'apagada': false,
             }
         ]
     },
@@ -95,6 +101,7 @@ let users = [
                 'dia': '28/04/2023',
                 'hora': '8:20',
                 'lido': true,
+                'apagada': false,
             },
             {
                 'mess_id' : 'm002',
@@ -104,6 +111,7 @@ let users = [
                 'dia': '28/04/2023',
                 'hora': '8:45',
                 'lido': true,
+                'apagada': false,
             }
         ]
     },
@@ -124,6 +132,7 @@ let users = [
                 'dia': '28/04/2023',
                 'hora': '8:20',
                 'lido': true,
+                'apagada': false,
             },
             {
                 'mess_id' : 'm002',
@@ -133,6 +142,17 @@ let users = [
                 'dia': '28/04/2023',
                 'hora': '8:45',
                 'lido': true,
+                'apagada': false,
+            },
+            {
+                'mess_id' : 'm003',
+                'fluxo': 'out',
+                'tipo': 'txt',
+                'content': ['Oi! Como está???'],
+                'dia': '28/04/2023',
+                'hora': '8:20',
+                'lido': true,
+                'apagada': true,
             }
         ]
     },
