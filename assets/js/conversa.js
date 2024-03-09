@@ -64,7 +64,7 @@ function fecharDigitarMensagem () {
     digitarMesagemAberto = false;
     resize (0);
     el = document.getElementById ("espaco-interacao");
-    el.style.display = 'block';
+    el.style.display = 'flex';
     el = document.getElementById ("espaco-digitacao");
     el.style.display = 'none';
 }
@@ -114,12 +114,11 @@ function menuArquivo (item) {
 }
 
 function menuInteracao (item) {
-    if (item == 'emoji') execComOpacityFeedback ('i-emoji-bck', naoImplementado);
-    else if (item == 'mensagem') execComOpacityFeedback ('i-mensagem-bck', abrirDigitarMensagem);
-    else if (item == 'arquivo') execComOpacityFeedback ('i-arquivo-bck', abrirMenuArquivo);
-    else if (item == 'reais') execComOpacityFeedback ('i-reais-bck', naoImplementado);
-    else if (item == 'camera') execComOpacityFeedback ('i-camera-bck', naoImplementado);
-    else if (item == 'microfone') execComOpacityFeedback ('i-microfone-bck', naoImplementado);
+    if (item == 'espaco-interacao-emoji') execComBckFeedback ('espaco-interacao-emoji', '#eeeeee', naoImplementado);
+    else if (item == 'espaco-interacao-mensagem') execComBckFeedback ('espaco-interacao-mensagem', '#eeeeee', abrirDigitarMensagem);
+    else if (item == 'espaco-interacao-arquivo') execComBckFeedback ('espaco-interacao-arquivo', '#81B8B2', abrirMenuArquivo);
+    else if (item == 'espaco-interacao-reais') execComBckFeedback ('espaco-interacao-reais', '#eeeeee', naoImplementado);
+    else if (item == 'espaco-interacao-camera') execComBckFeedback ('espaco-interacao-camera', '#eeeeee', naoImplementado);
 }
 
 function menuApagar (item) {
