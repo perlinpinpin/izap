@@ -22,9 +22,12 @@
         <input onchange="imageSelecao(event)" type="file" id="image-sel" style="position:absolute;display:none" accept="image/*"></input>
         <div onclick="closeAll()" id="conversa" class="conversa-closed"></div>
         <div id="espaco-digitacao" class="div-digitacao" style="display:none;"> 
-            <div class="div-digitacao-inter" style="display:flex">
-                <img src="assets/img/smiley.svg"/>
-                <span id="digitacao-input" onkeyup="key(event)" contenteditable="true" class="digitacao-input"> </span>
+            <div class="div-digitacao-inter" >
+                <div id="resp-ancora"></div>
+                <div style="display:flex">
+                    <img src="assets/img/smiley.svg"/>
+                    <span id="digitacao-input" onkeyup="key(event)" contenteditable="true" class="digitacao-input"> </span>
+                </div>
             </div>
             <span onclick="enviar()" class="digitacao-enviar">
                 ENVIAR

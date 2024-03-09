@@ -7,7 +7,7 @@ let users = [
         'foto': 'assets/conv/perfil/0.png',
         'status': 'Mensagem para mim.',
         'visto' : '8:10',
-        'conversa' : []
+        'conversa' : [],
     },
     {
         'timestamp': 2,
@@ -27,6 +27,7 @@ let users = [
                 'hora': '8:20',
                 'lido': true,
                 'apagada': false,
+                'resposta': null
             },
             {
                 'mess_id' : 'm002',
@@ -37,16 +38,18 @@ let users = [
                 'hora': '8:45',
                 'lido': true,
                 'apagada': false,
+                'resposta': 'm001'
             },
             {
                 'mess_id' : 'm003',
                 'fluxo': 'in',
                 'tipo': 'txt',
-                'content': ['Estou bem! E contigo?'],
+                'content': ['Estou bem!', 'E contigo?'],
                 'dia': '28/04/2023',
                 'hora': '8:53',
                 'lido': true,
                 'apagada': false,
+                'resposta': 'm002'
             },
             {
                 'mess_id' : 'a001',
@@ -57,6 +60,7 @@ let users = [
                 'hora': '15:20',
                 'lido': true,
                 'apagada': false,
+                'resposta': 'm003'
             },
             {
                 'mess_id' : 'a002',
@@ -67,6 +71,7 @@ let users = [
                 'hora': '15:20',
                 'lido': true,
                 'apagada': false,
+                'resposta': 'a001'
             },
             {
                 'mess_id' : 'm005',
@@ -78,9 +83,21 @@ let users = [
                     'O que achou?'
                 ],
                 'dia': '29/04/2023',
-                'hora': '15:20',
+                'hora': '15:25',
                 'lido': false,
                 'apagada': false,
+                'resposta': 'm001'
+            },
+            {
+                'mess_id' : 'm006',
+                'fluxo': 'out',
+                'tipo': 'au',
+                'content': ['assets/conv/audio/audio2.ogg', '0:12'],
+                'dia': '30/04/2023',
+                'hora': '15:27',
+                'lido': false,
+                'apagada': false,
+                'resposta': 'm005'
             }
         ]
     },
@@ -102,6 +119,7 @@ let users = [
                 'hora': '8:20',
                 'lido': true,
                 'apagada': false,
+                'resposta': null
             },
             {
                 'mess_id' : 'm002',
@@ -112,6 +130,7 @@ let users = [
                 'hora': '8:45',
                 'lido': true,
                 'apagada': false,
+                'resposta': null
             }
         ]
     },
@@ -133,6 +152,7 @@ let users = [
                 'hora': '8:20',
                 'lido': true,
                 'apagada': false,
+                'resposta': null
             },
             {
                 'mess_id' : 'm002',
@@ -143,6 +163,7 @@ let users = [
                 'hora': '8:45',
                 'lido': true,
                 'apagada': false,
+                'resposta': null
             },
             {
                 'mess_id' : 'm003',
@@ -153,6 +174,7 @@ let users = [
                 'hora': '8:20',
                 'lido': true,
                 'apagada': true,
+                'resposta': null
             }
         ]
     },

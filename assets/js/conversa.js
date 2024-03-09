@@ -2,6 +2,8 @@ let id = urlParams.get ('id');
 let digitacaoBaseH = 773;
 const conversa = users [id].conversa;
 
+let responderTo = null;
+
 function nome () {
     document.write (users [id].nome);
 }
@@ -76,6 +78,13 @@ function closeAll () {
     ignoreClose = false;
 }
 
+function responder () {
+    menuInteracao('mensagem');
+    responderTo = selecionados [0].msg.mess_id;
+    document.getElementById ('resp-ancora').innerHTML = respostaA (selecionados [0].msg);
+    clearSelecao ();
+}
+
 function menu (item) {
     if (item == 'voltar') execComOpacityFeedback ('voltar-bck', () => {window.location = 'chat.html';});
     else if (item == 'perfil') execComOpacityFeedback ('perfil-bck', naoImplementado);
@@ -86,9 +95,8 @@ function menu (item) {
 
 function menuSel (item) {
     if (item == 'voltar-sel') execComOpacityFeedback ('voltar-sel-bck', clearSelecao);
-    else if (item == 'responder-sel') execComOpacityFeedback ('responder-sel-bck', naoImplementado);
+    else if (item == 'responder-sel') execComOpacityFeedback ('responder-sel-bck', responder);
     else if (item == 'favoritar-sel') execComOpacityFeedback ('favoritar-sel-bck', naoImplementado);
-    // else if (item == 'info-sel') execComOpacityFeedback ('info-sel-bck', naoImplementado);
     else if (item == 'apagar-sel') execComOpacityFeedback ('apagar-sel-bck', removeSelecao);
     else if (item == 'encaminhar-sel') execComOpacityFeedback ('encaminhar-sel-bck', naoImplementado);
     else if (item == 'outros-sel') execComOpacityFeedback ('outros-sel-bck', naoImplementado);
@@ -183,14 +191,11 @@ function manageSelecionados () {
             }
         }
     }
-
     if (selecionados.length > 1 || apagados) {
         document.getElementById ('responder-sel').classList.add ('hide');
-        // document.getElementById ('info-sel').classList.add ('hide');
         document.getElementById ('encaminhar-sel').classList.add ('hide');
     } else {
         document.getElementById ('responder-sel').classList.remove ('hide');
-        // document.getElementById ('info-sel').classList.remove ('hide');
         document.getElementById ('encaminhar-sel').classList.remove ('hide');
     }
     if (apagados) {
@@ -274,6 +279,44 @@ function itemConversaRelease () {
     }
 }
 
+function scrollToMsg (messid) {
+    messid = 'mess-' + messid;
+    document.getElementById (messid).scrollIntoView ();
+}
+
+function respostaA (msg) {
+    let container = '';
+    let content = '';
+    if (msg.tipo == 'txt') {
+        content += '    <div class="msg-resp-content">' + msg.content [0] + '</div>';
+        if (msg.content.length > 1) {
+            content += '    <div class="msg-resp-content">...</div>';
+        }
+    }
+    else if (msg.tipo == 'au') {
+        content += '<div style="display:flex;align-items: center">';
+        content += '    <img src="assets/img/microfone2.svg">';
+        content += '    <span class="ml-5 msg-resp-content">Mensagem de voz (' + msg.content [1] + ')</span>';
+        content += '</div>';
+    }
+    else {
+        content += '<img width="50px" src="' + msg.content + '" />';
+    }
+    if (msg.fluxo == 'out') {
+        container += '<div class="msg-resp-out" onclick="scrollToMsg (\'' + msg.mess_id + '\')">';
+        container += '    <div class="msg-resp-out-user">Você</div>';
+        container += content;
+        container += '</div>';
+    }
+    else {
+        container += '<div class="msg-resp-in" onclick="scrollToMsg (\'' + msg.mess_id + '\')">';
+        container += '    <div class="msg-resp-in-user">' + users [id].nome + '</div>';
+        container += content;
+        container += '</div>';
+    }
+    return container;
+}
+
 function criarMsg (msg) {
     let dv = document.createElement ('div');
     dv.id = "mess-" + msg.mess_id;
@@ -314,111 +357,114 @@ function criarMsg (msg) {
         arrow.style.position = 'relative';
         arrow.style.right = '5px';
     }
-    
+
+    let content = '';
     if (msg.apagada) {
-        let content = '';
         content += '<div style="display:flex;align-items:center;justify-content:center">';
         content += '    <img src="assets/img/apagado.svg">';
-        content += '    <span class="msg-txt ml-10 mr-5">MESSAGEM APAGADA</span>';
+        content += '    <span class="msg-txt ml-10 mr-5" style="color:#666">MESSAGEM APAGADA</span>';
         content += '    <span class="msg-time">' + msg.hora + '</span>';
         content += '</div>';        
-        box.innerHTML = content;
-        box.innerHTML = content;
         box.style.paddingLeft = '10px';
         box.style.paddingTop = '10px';
         box.style.paddingRight = '10px';
         box.style.paddingBottom = '10px';
     }
-    else if (msg.tipo == 'txt') {
-        let content = '';
-        for (let i = 0; i < msg.content.length; i++) {
-            if (i == msg.content.length - 1) {
-                content += '<div style="display:flex;justify-content: space-between">';
-                content += '    <div class="msg-txt">' + msg.content [i] + '</div>'; 
-                content += '    <div style="display:inline-block">';
-                content += '        <span class="msg-time">' + msg.hora + '</span>';
-                if (msg.fluxo == 'out') {
-                content += '        <span style="margin-left:6px;position:relative; top:9px">';
-                content += '            <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg">';
-                content += '                <path d="M0 7.73333L5.33588 12.1075L13.9039 1.59017L12.2096 0L5.02763 8.816L1.3635 5.81208L0 7.73333ZM21.7789 1.59017L20.0846 0L12.9195 8.79546L12.0724 8.06804L10.6661 9.95546L13.194 12.128L21.7789 1.59017Z" fill="' + (msg.lido ? '#4fc3f7' : '#999999') + '"/>';
-                content += '            </svg>';
-                content += '        </span>';
+    else {
+        if (msg.resposta != null) {
+            let cvs = users [id].conversa;
+            for (let i = 0; i < cvs.length; i ++) {
+                if (cvs [i].mess_id == msg.resposta) {
+                    content = respostaA (cvs [i]);
                 }
-                content += '    </div>';
-                content += '</div>';
+            }
+        }
+        if (msg.tipo == 'txt') {
+            for (let i = 0; i < msg.content.length; i++) {
+                if (i == msg.content.length - 1) {
+                    content += '<div style="display:flex;justify-content: space-between">';
+                    content += '    <div class="msg-txt">' + msg.content [i] + '</div>'; 
+                    content += '    <div style="display:inline-block">';
+                    content += '        <span class="msg-time">' + msg.hora + '</span>';
+                    if (msg.fluxo == 'out') {
+                    content += '        <span style="margin-left:6px;position:relative; top:9px">';
+                    content += '            <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg">';
+                    content += '                <path d="M0 7.73333L5.33588 12.1075L13.9039 1.59017L12.2096 0L5.02763 8.816L1.3635 5.81208L0 7.73333ZM21.7789 1.59017L20.0846 0L12.9195 8.79546L12.0724 8.06804L10.6661 9.95546L13.194 12.128L21.7789 1.59017Z" fill="' + (msg.lido ? '#4fc3f7' : '#999999') + '"/>';
+                    content += '            </svg>';
+                    content += '        </span>';
+                    }
+                    content += '    </div>';
+                    content += '</div>';
+                }
+                else {
+                    content += '<div style="margin-bottom:12px">';
+                    content += '    <span class="msg-txt"">' + msg.content [i] + '</span>';
+                    content += '</div>';
+                }
+            }
+            box.style.paddingLeft = '10px';
+            box.style.paddingTop = '10px';
+            box.style.paddingRight = '10px';
+            box.style.paddingBottom = '10px';
+        }
+        else if (msg.tipo == 'au') {
+            content += '<div style="display: flex; align-items:center">';
+            if (msg.fluxo == 'out') {
+                content += '    <span style="border-radius: 20px; background-image:url(\'' + users [id].foto + '\'); background-size: 40px 40px; width:40px; height:40px; display:inline-block"></span>';
+                content += '    <img id="play_pause_btn_' + msg.mess_id + '" onclick="swicthPlaying(\'' + msg.mess_id + '\')" src="assets/img/play.svg" style="margin-left: 5px; margin-right: 5px">';
+                content += '    <span id="' + msg.mess_id + '"></span>';
             }
             else {
-                content += '<div style="margin-bottom:12px">';
-                content += '    <span class="msg-txt"">' + msg.content [i] + '</span>';
-                content += '</div>';
+                content += '    <img id="play_pause_btn_' + msg.mess_id + '" onclick="swicthPlaying(\'' + msg.mess_id + '\')" src="assets/img/play.svg" style="margin-right: 5px">';
+                content += '    <span id="' + msg.mess_id + '"></span>';
+                content += '    <span style="border-radius: 20px; background-image:url(\'' + users [id].foto +'\'); background-size: 40px 40px; width:40px; height:40px; display:inline-block; margin-left: 5px;"></span>';
             }
+            content += '</div>';
+            content += '<div style="display: flex; justify-content: space-between; width:220px; position:relative; top: -8px;">';
+            content += '    <span class="msg-time">' + msg.content [1] + '</span>';
+            
+            if (msg.fluxo == 'out') {
+                content += '    <div style="position:relative; top:-7px; left:5px">';
+                content += '        <span class="msg-time">' + msg.hora + '</span>';
+                content += '            <span style="position:relative; top:12px">';
+                content += '                <svg width="22" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">';
+                content += '                    <path d="M0 7.73333L5.33588 12.1075L13.9039 1.59017L12.2096 0L5.02763 8.816L1.3635 5.81208L0 7.73333ZM21.7789 1.59017L20.0846 0L12.9195 8.79546L12.0724 8.06804L10.6661 9.95546L13.194 12.128L21.7789 1.59017Z" fill="' + (msg.lido ? '#4fc3f7' : '#999999') + '"/>';
+                content += '                </svg>';
+                content += '            </span>';
+            }
+            else {
+                content += '    <div>';
+                content += '        <span class="msg-time">' + msg.hora + '</span>';
+            }
+            content += '    </div>';
+            content += '</div>';
+            if (msg.tipo == 'au') {
+                setTimeout (() => createPlayer (msg.mess_id, msg.content [0 ]), 100);
+            }
+            box.style.paddingLeft = '10px';
+            box.style.paddingTop = '5px';
+            box.style.paddingRight = '10px';
+            box.style.paddingBottom = '5px';
         }
-        box.innerHTML = content;
-        box.style.paddingLeft = '10px';
-        box.style.paddingTop = '10px';
-        box.style.paddingRight = '10px';
-        box.style.paddingBottom = '10px';
+        else if (msg.tipo == 'img' || msg.tipo == 'mimg') {
+            content += '<img width="200px" src="' + msg.content + '" />';
+            if (msg.fluxo == 'out') {
+                content += '<span class="msg-img-time-out">' + msg.hora + '</span>';
+                content += '<span class="msg-img-lido-out">';
+                content += '    <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg">';
+                content += '        <path d="M0 7.73333L5.33588 12.1075L13.9039 1.59017L12.2096 0L5.02763 8.816L1.3635 5.81208L0 7.73333ZM21.7789 1.59017L20.0846 0L12.9195 8.79546L12.0724 8.06804L10.6661 9.95546L13.194 12.128L21.7789 1.59017Z" fill="' + (msg.lido ? '#4fc3f7' : '#999999') + '"/>';
+                content += '    </svg>';
+                content += '</span>';
+            } else {
+                content += '<span class="msg-img-time-in">' + msg.hora + '</span>';
+            }
+            box.style.paddingLeft = '5px';
+            box.style.paddingTop = '5px';
+            box.style.paddingRight = '5px';
+            box.style.paddingBottom = '5px';
+        }
     }
-    else if (msg.tipo == 'au') {
-        let content = '';
-        content += '<div style="display: flex; align-items:center">';
-        if (msg.fluxo == 'out') {
-            content += '    <span style="border-radius: 20px; background-image:url(\'' + users [id].foto + '\'); background-size: 40px 40px; width:40px; height:40px; display:inline-block"></span>';
-            content += '    <img id="play_pause_btn_' + msg.mess_id + '" onclick="swicthPlaying(\'' + msg.mess_id + '\')" src="assets/img/play.svg" style="margin-left: 5px; margin-right: 5px">';
-            content += '    <span id="' + msg.mess_id + '"></span>';
-        }
-        else {
-            content += '    <img id="play_pause_btn_' + msg.mess_id + '" onclick="swicthPlaying(\'' + msg.mess_id + '\')" src="assets/img/play.svg" style="margin-right: 5px">';
-            content += '    <span id="' + msg.mess_id + '"></span>';
-            content += '    <span style="border-radius: 20px; background-image:url(\'' + users [id].foto +'\'); background-size: 40px 40px; width:40px; height:40px; display:inline-block; margin-left: 5px;"></span>';
-        }
-        content += '</div>';
-        content += '<div style="display: flex; justify-content: space-between; width:220px; position:relative; top: -8px;">';
-        content += '    <span class="msg-time">' + msg.content [1] + '</span>';
-        
-        if (msg.fluxo == 'out') {
-            content += '    <div style="position:relative; top:-7px; left:5px">';
-            content += '        <span class="msg-time">' + msg.hora + '</span>';
-            content += '            <span style="position:relative; top:12px">';
-            content += '                <svg width="22" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">';
-            content += '                    <path d="M0 7.73333L5.33588 12.1075L13.9039 1.59017L12.2096 0L5.02763 8.816L1.3635 5.81208L0 7.73333ZM21.7789 1.59017L20.0846 0L12.9195 8.79546L12.0724 8.06804L10.6661 9.95546L13.194 12.128L21.7789 1.59017Z" fill="' + (msg.lido ? '#4fc3f7' : '#999999') + '"/>';
-            content += '                </svg>';
-            content += '            </span>';
-        }
-        else {
-            content += '    <div>';
-            content += '        <span class="msg-time">' + msg.hora + '</span>';
-        }
-        content += '    </div>';
-        content += '</div>';
-        box.innerHTML = content;
-        if (msg.tipo == 'au') {
-            setTimeout (() => createPlayer (msg.mess_id, msg.content [0 ]), 100);
-        }
-        box.style.paddingLeft = '10px';
-        box.style.paddingTop = '5px';
-        box.style.paddingRight = '10px';
-        box.style.paddingBottom = '5px';
-    }
-    else if (msg.tipo == 'img' || msg.tipo == 'mimg') {
-        let content = '';
-        content += '<img width="200px" src="' + msg.content + '" />';
-        if (msg.fluxo == 'out') {
-            content += '<span class="msg-img-time-out">' + msg.hora + '</span>';
-            content += '<span class="msg-img-lido-out">';
-            content += '    <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg">';
-            content += '        <path d="M0 7.73333L5.33588 12.1075L13.9039 1.59017L12.2096 0L5.02763 8.816L1.3635 5.81208L0 7.73333ZM21.7789 1.59017L20.0846 0L12.9195 8.79546L12.0724 8.06804L10.6661 9.95546L13.194 12.128L21.7789 1.59017Z" fill="' + (msg.lido ? '#4fc3f7' : '#999999') + '"/>';
-            content += '    </svg>';
-            content += '</span>';
-        } else {
-            content += '<span class="msg-img-time-in">' + msg.hora + '</span>';
-        }
-        box.innerHTML = content;
-        box.style.paddingLeft = '5px';
-        box.style.paddingTop = '5px';
-        box.style.paddingRight = '5px';
-        box.style.paddingBottom = '5px';
-    }
+    box.innerHTML = content;
     return dv;
 }
 
@@ -458,8 +504,10 @@ function addNovaMensagem (tipo, content) {
         'dia': day + '/' + month + '/' + now.getFullYear (),
         'hora': now.getHours () + ':' + minutes,
         'lida': false,
-        'apagada': false
+        'apagada': false,
+        'resposta' : responderTo
     };
+    responderTo = null;
     users [id].conversa.push (msg);
     users [id].timestamp = new Date ().getTime ();
     usersUpdated ();
@@ -472,12 +520,26 @@ function addNovaMensagem (tipo, content) {
 }
 
 function enviar () {
+    console.log('Entrei aqui');
     let el = document.getElementById ('digitacao-input');
     const conv = document.getElementById ('conversa');
     let cnt = el.innerHTML;
     cnt = cnt.split ("<br>");
-    console.log (cnt);
     el.innerHTML = '';
+    if (cnt.length == 0) {
+        fecharDigitarMensagem ();
+        return;
+    }
+    for (let i = cnt.length - 1; i >= 0; i --) {
+        if (cnt [i] == '' || cnt [i] == ' ') cnt.splice (i, 1);
+        else {
+            break;
+        }
+    }
+    if (cnt.length == 0) {
+        fecharDigitarMensagem ();
+        return;
+    }
     addNovaMensagem ('txt', cnt);
 }
 

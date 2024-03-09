@@ -1,3 +1,39 @@
-<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.5 0C5.14933 0 0 5.14933 0 11.5C0 17.8507 5.14933 23 11.5 23C17.8507 23 23 17.8507 23 11.5C23 5.14933 17.8507 0 11.5 0ZM11.5 21.0491C6.22746 21.0491 1.95089 16.7725 1.95089 11.5C1.95089 9.2154 2.75435 7.11563 4.09431 5.47277L17.5272 18.9057C15.8844 20.2456 13.7846 21.0491 11.5 21.0491ZM18.9057 17.5272L5.47277 4.09431C7.11563 2.75435 9.2154 1.95089 11.5 1.95089C16.7725 1.95089 21.0491 6.22746 21.0491 11.5C21.0491 13.7846 20.2456 15.8844 18.9057 17.5272Z" fill="black"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="23"
+   height="23"
+   viewBox="0 0 23 23"
+   fill="none"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="apagado.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="37.130435"
+     inkscape:cx="11.486534"
+     inkscape:cy="11.5"
+     inkscape:window-width="1360"
+     inkscape:window-height="740"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <path
+     d="M11.5 0C5.14933 0 0 5.14933 0 11.5C0 17.8507 5.14933 23 11.5 23C17.8507 23 23 17.8507 23 11.5C23 5.14933 17.8507 0 11.5 0ZM11.5 21.0491C6.22746 21.0491 1.95089 16.7725 1.95089 11.5C1.95089 9.2154 2.75435 7.11563 4.09431 5.47277L17.5272 18.9057C15.8844 20.2456 13.7846 21.0491 11.5 21.0491ZM18.9057 17.5272L5.47277 4.09431C7.11563 2.75435 9.2154 1.95089 11.5 1.95089C16.7725 1.95089 21.0491 6.22746 21.0491 11.5C21.0491 13.7846 20.2456 15.8844 18.9057 17.5272Z"
+     fill="#666"
+     id="path2" />
 </svg>
