@@ -46,15 +46,6 @@
                 DESLIZE PARA CONTROLAR  A GRAVAÇÃO
             </span>
         </div>
-        <div onpointerdown="abrirMicrofone(event)" 
-            onpointerup="fecharMicrofone(event)" 
-            ontouchmove="toucheMove(event)"
-            ontouchend="dragEnd(event)"
-            ondrag="dragEvt(event)"
-            ondragend="dragEnd(event)"
-            id="icone-microfone" class="microfone-fechado">
-            <span style="background-image: url(assets/img/microfone.svg);width:24px;height:30px"></span>
-        </div>
         <div>
             <div id="espaco-interacao">
                 <img id="espaco-interacao-emoji" src="assets/img/emoji.svg" onclick="menuInteracao('espaco-interacao-emoji')">
@@ -63,6 +54,15 @@
                 <img src="assets/img/reais.svg" onclick="menuInteracao ('espaco-interacao-reais')" id="espaco-interacao-reais">
                 <img src="assets/img/camera.svg" onclick="menuInteracao ('espaco-interacao-camera')" id="espaco-interacao-camera">
             </div>
+        </div>
+        <div onpointerdown="abrirMicrofone(event)" 
+            onpointerup="fecharMicrofone(event)" 
+            ontouchmove="toucheMove(event)"
+            ontouchend="dragEnd(event)"
+            ondrag="dragEvt(event)"
+            ondragend="dragEnd(event)"
+            id="icone-microfone" class="microfone-fechado">
+            <span style="background-image: url(assets/img/microfone.svg);width:24px;height:30px"></span>
         </div>
         <div id="audio-lock" class="hide">
             <div id="recorder">
@@ -172,7 +172,6 @@
                     </g>
                 </g>
             </g>
-            <rect id="conversa-bck" y="113" width="390" height="704" fill="#EFE6DD"/>
             <g id="menu-arquivo" class="menu-closed" transform="translate(0,28)">
                 <rect y="531" width="390" height="259" fill="white"/>
                 <g onclick="menuArquivo('documento')">

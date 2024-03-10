@@ -1,3 +1,7 @@
+body {
+    background-color: #EFE6DD;
+}
+
 .nome {
     font-family: 'Archivo', sans-serif;
     font-weight: 600;
@@ -102,6 +106,7 @@
     max-height: 374px;
     transition: 0.2s;
 }
+
 
 .div-digitacao {
     position:absolute;
@@ -213,7 +218,7 @@
 }
 
 #icone-microfone {
-    position:absolute;
+    position:fixed;
     background: #02A882;
     display: flex;
     justify-content: center;
@@ -227,14 +232,14 @@ img {
 }
 
 .microfone-aberto {
-    top: 720px; 
+    bottom: 0px; 
     right: 0px;
     width: 60px;
     height: 60px;
 }
 
 .microfone-fechado {
-    top: 734px; 
+    bottom: 10px; 
     right: 5px;
     width: 40px;
     height: 40px;
@@ -256,12 +261,12 @@ img {
 }
 
 #audio-lock {
-    position:absolute;
-    top: 670px; 
+    position:fixed;
+    bottom: 10px;
+    left:5px;
     background:#ffffff;
     max-height: 109px;
     height: 190px;
-    max-width: 366px;
     border-radius:18px;
     padding-top:8px;
     padding-left: 12px;
@@ -331,6 +336,8 @@ img {
     padding-right: 10px;
 }
 
+/********************** RESPOSTAS  **********************/
+
 .msg-resp-out {
     margin-bottom:10px;
     background-color: #f8fff8;
@@ -363,14 +370,13 @@ img {
     color: #666;
 }
 
-/* Espaço interação fechado */
+/******************************* Espaço interação fechado *************************/
 
 #espaco-interacao {
     position: fixed;
     left:6px;
     bottom: 10px;
     height: 40px;
-    width: 334px;
     border-radius: 18px;
     display: flex;
     align-items: center;
@@ -384,6 +390,7 @@ img {
 
 #espaco-interacao-mensagem {
     display: inline-block;
+    width: calc(100vw - 302px);
     color: #999999;
     margin-left: 5px;
     padding-right: 25px;
@@ -413,4 +420,5 @@ img {
 #espaco-interacao-camera {
     margin-left: 5px;
     padding: 5px;
+    padding-right: 8px;
 }
