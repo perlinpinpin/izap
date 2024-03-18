@@ -1,19 +1,163 @@
 body {
     background-color: #EFE6DD;
+    /* max-width: 100vw; */
+    position: fixed;
+    touch-action: none;
 }
 
-.nome {
+* {
+    touch-action: none;
+}
+
+/* CABEÇALHO */
+
+.main-menu-item {
+    padding: 5px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    width: 20px;
+}
+
+.main-menu-item-sel {
+    padding: 5px;
+    max-width: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+}
+
+.menu-selecionado-label {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: #FBF3F3;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#voltar {
+    height: 60px;
+    margin:10px;
+    margin-right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+}
+
+#voltar-sel {
+    height: 60px;
+    margin:10px;
+    margin-right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+}
+
+#perfil {
+    position: absolute;
+    left: 40px;
+    top: 25px;
+}
+
+#label-nb-selecionados {
+    position: absolute;
+    left: 45px;
+    top: 46px;
+    color: #FBF3F3;
+}
+
+#nome {
     font-family: 'Archivo', sans-serif;
     font-weight: 600;
     font-size: 20px;
-    fill: white;   
+    color: white;
+    position: absolute;
+    left: 105px;
+    top: 30px
 }
 
-.visto-ultimo {
+#visto-ultimo {
     font-family: 'Archivo', sans-serif;
     font-weight: 400;
     font-size: 13px;
-    fill: white;    
+    color: white;    
+    position: absolute;
+    left: 105px;
+    top:55px
+}
+
+#visio {
+    position: absolute;
+    right: 75px;
+}
+
+#fone {
+    position: absolute;
+    right: 40px;
+}
+
+#outros, #outros-sel {
+    position: absolute;
+    right: 5px;
+}
+
+#encaminhar-sel {
+    right: 20px;
+    top: 25px;
+}
+
+#apagar-sel {
+    right: 95px;
+    top: 20px;
+    max-width: 60px;
+}
+
+#favoritar-sel {
+    right: 145px;
+    top: 25px;
+}
+
+#responder-sel {
+    right: 210px;
+    top: 20px;
+}
+
+/* Menu ARQUIVO */
+
+#menu-arquivo {
+    bottom: -200px;
+    height: 200px;
+    max-height: 200px;
+    min-height: 200px;
+    width: 100%;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 100;
+}
+
+.menu-arquivo-line {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+
+.arquivo-item {
+    max-width: 100px;
+    max-height: 100px;
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+}
+
+.arquivo-item img {
+    margin-bottom: 5px;
 }
 
 .menu-arquivo-label {
@@ -21,13 +165,6 @@ body {
     font-weight: 700;
     font-size: 14px;
     fill: #080808;
-}
-
-.menu-selecionado-label {
-    font-family: 'Archivo', sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    fill: #FBF3F3;
 }
 
 #label-nb-selecionados {
@@ -82,42 +219,17 @@ body {
     bottom: 9px;
 }
 
-.menu-closed {
-    translate: 0 260px;
-    transition: 0.2s;
+#conversa {
+    max-width: 100vw;
+    overflow-y: scroll;
 }
-
-.menu-open {
-    translate: 0 0;
-    transition: 0.2s;
-}
-
-.conversa-closed {
-    position: absolute;
-    top: 84px;
-    height: 634px;
-    max-height: 634px;
-    overflow: auto;
-    width: 380px;
-    margin-left: 5px;
-}
-
-.conversa-opened {
-    max-height: 374px;
-    transition: 0.2s;
-}
-
 
 .div-digitacao {
-    position:absolute;
-    /* top: 734px; */
-    display:flex;
-    align-items:end;
+    align-items: end;
 }
 
 .div-digitacao-inter {
     background:#ffffff;
-    width:310;
     border-radius:20px;
     margin-left:5px;
     margin-right:4px;
@@ -135,7 +247,7 @@ body {
     color: #221B15;
     border:none;
     margin-left: 4px;
-    width: 222px;
+    width: calc(100vw - 170px);
     display: inline-block;
     margin-left: 8px;
     padding-top: 4px;
@@ -181,8 +293,7 @@ body {
     background:#ffffff;
     max-height: 30px;
     border-radius:20px;
-    margin-left:5px;
-    margin-right:4px;
+    left:5px;
     padding-top:8px;
     padding-left: 12px;
     padding-right: 12px;
@@ -198,6 +309,21 @@ body {
     border-radius: 20px;
     margin-left: 5px;
     right: 10px;
+}
+
+#label-control-audio {
+    position:absolute;  
+    top: 545px; 
+    background:#ffffff;
+    border-radius: 20px;
+    margin-left: 5px;
+    right: 10px;
+    width: 150px;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    color: black;
+    text-align: center;
 }
 
 #duracao-unlock {
@@ -218,7 +344,6 @@ body {
 }
 
 #icone-microfone {
-    position:fixed;
     background: #02A882;
     display: flex;
     justify-content: center;
@@ -232,38 +357,30 @@ img {
 }
 
 .microfone-aberto {
-    bottom: 0px; 
+    /* bottom: 0px;  */
     right: 0px;
     width: 60px;
     height: 60px;
 }
 
 .microfone-fechado {
-    bottom: 10px; 
+    /* bottom: 10px;  */
     right: 5px;
     width: 40px;
     height: 40px;
 }
 
-#label-control-audio {
-    position:absolute;
-    top: 545px; 
-    background:#ffffff;
-    border-radius: 20px;
-    margin-left: 5px;
-    right: 10px;
-    width: 150px;
-    padding: 10px;
-    font-weight: 700;
-    font-size: 15px;
-    color: black;
-    text-align: center;
+.microfone-arquivo-aberto {
+    bottom: 210px;
+    transition: 0.2s;
 }
 
 #audio-lock {
-    position:fixed;
-    bottom: 10px;
-    left:5px;
+    position: absolute;
+    /* bottom: -10px;
+    left:0px; */
+    /* width: calc(100vw - 20px); */
+    top:600px;
     background:#ffffff;
     max-height: 109px;
     height: 190px;
@@ -271,6 +388,8 @@ img {
     padding-top:8px;
     padding-left: 12px;
     padding-right: 12px;
+    padding-bottom: 10px;
+    z-index: 100;
 }
 
 #recorder {
@@ -372,15 +491,20 @@ img {
 
 /******************************* Espaço interação fechado *************************/
 
-#espaco-interacao {
-    position: fixed;
-    left:6px;
-    bottom: 10px;
+.espaco-interacao {
+    /* bottom: 10px; */
     height: 40px;
+    width: 90vw;
     border-radius: 18px;
     display: flex;
     align-items: center;
     background-color: white;
+    margin-bottom: 5px;
+}
+
+.espaco-interacao-opened {
+    /* bottom: 210px; */
+    transition: 0.2s;
 }
 
 #espaco-interacao-emoji {
@@ -390,9 +514,10 @@ img {
 
 #espaco-interacao-mensagem {
     display: inline-block;
-    width: calc(100vw - 302px);
+    width: calc(30vw);
     color: #999999;
     margin-left: 5px;
+    margin-right: 5px;
     padding-right: 25px;
     padding-left: 5px;
     font-weight: 700;
@@ -406,6 +531,7 @@ img {
     font-size: 15px;
     color: #fff;
     background-color: #02A882;
+    margin-left: 4px;
     padding-left: 4px;
     padding-right: 4px;
     padding-top: 10px;
@@ -413,12 +539,12 @@ img {
 }
 
 #espaco-interacao-reais {
-    margin-left: 5px;
+    margin-left: 4px;
     padding: 5px;
 }
 
 #espaco-interacao-camera {
-    margin-left: 5px;
+    margin-left: 4px;
     padding: 5px;
     padding-right: 8px;
 }
