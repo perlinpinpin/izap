@@ -5,9 +5,10 @@ if (voltar == null) {
 }
 
 function menu (item) {
-    if (item == 'voltar') execComOpacityFeedback ('voltar-bck', () => {window.location = voltar + '.html';});
-    else if (item == 'foto') execComOpacityFeedback ('foto-bck', () => {window.location = 'editar_foto.html';});
-    else if (item == 'nome') execComOpacityFeedback ('nome-bck', naoImplementado);
-    else if (item == 'status') execComOpacityFeedback ('status-bck', naoImplementado);
-    else if (item == 'telefone') execComOpacityFeedback ('telefone-bck', naoImplementado);
+    if (item == 'voltar') execComBckFeedback ('voltar', '#81B8B2', () => {window.location = voltar + '.html';});
+    else if (item == 'search') execComBckFeedback ('search', '#eee', () => {window.location = 'editar_foto.html';});
+    else if (item == 'trocar-foto') execComBckFeedback ('trocar-foto', '#eee', () => {window.location = 'editar_foto.html';});
+    else if (item == 'usuario') execComBckFeedback ('usuario', '#eee', naoImplementado);
+    else if (item == 'recado') execComBckFeedback ('recado', '#eee', naoImplementado);
+    else if (item == 'telefone') execComBckFeedback ('telefone', '#eee', naoImplementado);
 }
