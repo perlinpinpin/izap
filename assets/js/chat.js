@@ -167,13 +167,13 @@ function configuracoes () {
 }
 
 function outrosMenu (item) {
-    if (item == 'novo-grupo') execComOpacityFeedback ('novo-grupo-bck', naoImplementadoL);
-    else if (item == 'nova-transimissao') execComOpacityFeedback ('nova-transimissao-bck', naoImplementadoL);
-    else if (item == 'aparelhos-conectados') execComOpacityFeedback ('aparelhos-conectados-bck', naoImplementadoL);
-    else if (item == 'mensagens-favoritas') execComOpacityFeedback ('mensagens-favoritas-bck', naoImplementadoL);
-    else if (item == 'encontrar-empresas') execComOpacityFeedback ('encontrar-empresas-bck', naoImplementadoL);
-    else if (item == 'pagamentos') execComOpacityFeedback ('pagamentos-bck', naoImplementadoL);
-    else if (item == 'configuracoes') execComOpacityFeedback ('configuracoes-bck', configuracoes);
+    if (item == 'novo-grupo') execComBckFeedback ('novo-grupo', '#eee', naoImplementadoL);
+    else if (item == 'nova-transimissao') execComBckFeedback ('nova-transimissao', '#eee', naoImplementadoL);
+    else if (item == 'aparelhos-conectados') execComBckFeedback ('aparelhos-conectados', '#eee', naoImplementadoL);
+    else if (item == 'mensagens-favoritas') execComBckFeedback ('mensagens-favoritas', '#eee', naoImplementadoL);
+    else if (item == 'encontrar-empresas') execComBckFeedback ('encontrar-empresas', '#eee', naoImplementadoL);
+    else if (item == 'pagamentos') execComBckFeedback ('pagamentos', '#eee', naoImplementadoL);
+    else if (item == 'configuracoes') execComBckFeedback ('configuracoes', '#eee', configuracoes);
     else if (item == 'close') {
         closeOutros ();
     }

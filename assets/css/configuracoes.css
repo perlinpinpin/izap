@@ -1,14 +1,61 @@
+/* Cabeçalho */
+
+#cabecalho {
+    background-color: #008069;
+    height: 80px;
+    min-height: 80px;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#voltar {
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 #titulo-configuracoes {
     font-family: 'Archivo', sans-serif;
     font-weight: 700;
     font-size: 16px;
-    fill: #FFFFFF;
+    color: #FFFFFF;
+    padding: 15px 10px 15px 10px;
+}
+
+#search {
+    padding: 15px 5px 15px 10px;
+
+}
+
+/* Usuario */
+
+#usuario {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#trocar-foto {
+    background-color: #008069;
+    text-align: center;
+    width: 180px;
+    padding: 5px;
+    color: #FFFFFF;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
 }
 
 #nome {
     font-family: 'Archivo', sans-serif;
     font-weight: 700;
     font-size: 20px;
+    color: #010101;
+    margin-bottom: 5px;
     fill: #010101;
 }
 
@@ -17,6 +64,15 @@
     font-weight: 400;
     font-size: 16px;
     fill: #6B6A6A;
+    color: #6B6A6A;
+    margin-bottom: 3px;
+}
+
+/* items */
+
+.menu-icone {
+    min-width: 70px;
+    text-align: center;
 }
 
 .menu-item {
@@ -24,18 +80,13 @@
     font-weight: 700;
     font-size: 16px;
     fill: #010101; 
+    color: #010101; 
 }
 
 .menu-item-sub {
     font-family: 'Archivo', sans-serif;
     font-weight: 400;
     font-size: 13px;
-    fill: #010101; 
-}
-
-#botao-troca {
-    font-family: 'Archivo', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    fill: white; 
+    fill: #010101;
+    color: #010101;
 }
