@@ -672,12 +672,12 @@ function switchPlayPauseRecorder () {
 }
 
 function computarSizes () {
-    document.getElementById ('body').style.width = 'calc(' + window.visualViewport.width + 'px)';
-    document.getElementById ('body').style.maxWidth = 'calc(' + window.visualViewport.width + 'px)';
+    // document.getElementById ('body').style.width = 'calc(' + window.visualViewport.width + 'px)';
+    // document.getElementById ('body').style.maxWidth = 'calc(' + window.visualViewport.width + 'px)';
     document.getElementById ('body').style.height = 'calc(' + window.visualViewport.height + 'px)';
     document.getElementById ('body').style.maxHeight = 'calc(' + window.visualViewport.height + 'px)';
-    document.getElementById ('tela').style.width = 'calc(' + window.visualViewport.width + 'px)';
-    document.getElementById ('tela').style.maxWidth = 'calc(' + window.visualViewport.width + 'px)';
+    // document.getElementById ('tela').style.width = 'calc(' + window.visualViewport.width + 'px)';
+    // document.getElementById ('tela').style.maxWidth = 'calc(' + window.visualViewport.width + 'px)';
     document.getElementById ('tela').style.height = 'calc(' + window.visualViewport.height + 'px)';
     document.getElementById ('tela').style.maxHeight = 'calc(' + window.visualViewport.height + 'px)';
     if (arquivoMenuAberto) {
@@ -688,11 +688,11 @@ function computarSizes () {
         document.getElementById ('conversa').style.height = 'calc(' + window.visualViewport.height + 'px - 140px)';
         document.getElementById ('conversa').style.maxHeight = 'calc(' + window.visualViewport.height + 'px - 140px)';
     }
-    document.getElementById ('conversa').style.maxWidth = 'calc(' + window.visualViewport.width + 'px)';
+    // document.getElementById ('conversa').style.maxWidth = 'calc(' + window.visualViewport.width + 'px)';
     document.getElementById ('espaco-interacao-mensagem').style.maxWidth = 'calc(' + window.visualViewport.width + 'px - 300px)';
     document.getElementById ('espaco-interacao-mensagem').style.width = 'calc(' + window.visualViewport.width + 'px - 300px)';
     document.getElementById ('espaco-interacao').style.width = 'calc(' + window.visualViewport.width + 'px - 40px)';
-    document.getElementById ('audio-lock').style.maxWidth = 'calc(' + window.visualViewport.width + 'px)';
+    // document.getElementById ('audio-lock').style.maxWidth = 'calc(' + window.visualViewport.width + 'px)';
     document.getElementById ('div-audio-unlocked').style.top = 'calc(' + window.visualViewport.height + 'px - 50px)';
     document.getElementById ('div-audio-tolock').style.top = 'calc(' + window.visualViewport.height + 'px - 160px)';
     document.getElementById ('label-control-audio').style.top = 'calc(' + window.visualViewport.height + 'px - 239px)';

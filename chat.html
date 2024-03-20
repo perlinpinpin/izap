@@ -5,7 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&display=swap"  rel="stylesheet">
-    <meta name="viewport" content="width=390, initial-scale=0.92">
+    <meta name="viewport" content="device-width, initial-scale=1">
     <title>IZap</title>
     <link rel="icon" href="assets/icons/zap.svg">
     <link rel="manifest" href="manifest.json">
@@ -16,140 +16,93 @@
     <script type="text/javascript" charset="UTF-8" src="assets/js/chat.js"></script>
 </head>
 <body>
-    <!-- <div id="cabecalho"></div> -->
-    <svg width="390" height="782" viewBox="0 0 390 782" fill="white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g clip-path="url(#clip0_0_3)">
-        <g transform="translate(0,-35)">
-            <g id="cabecalho-chat">
-                <rect width="390" height="147" fill="#008069"/>
-                <g>
-                    <g onclick="menu('edit-foto')" transform="translate(24,0)">
-                        <rect rx="4" x="110" y ="45" width="32" height="32" fill="#008069" stroke="#F5F5F5" stroke-width="2"/>
-                        <ellipse cx="100" cy="79" rx="28" ry="28" fill="#F5F5F5" clip-path="url(#corte-edit)"/>
-                        <rect id="edit-foto-bck" rx="4" x="60" y="38" width="87" height="73" fill="#81B8B2" fill-opacity="0"/>
-                        <rect x="60" y ="52" width="80" height="54" fill="url(#pattern0)" stroke="white" stroke-width="2" clip-path="url(#clip-foto-main)"/> 
-                        <path id="icone-edit" d="M356.234 323.379C356.592 322.957 356.592 322.253 356.234 321.852L354.089 319.317C353.75 318.894 353.154 318.894 352.797 319.317L351.11 321.299L354.548 325.362M340 334.44V338.503H343.438L353.576 326.51L350.138 322.448L340 334.44Z" fill="white" transform="translate(-222, -265)"/>
-                    </g>
-                    <g onclick="menu('edit-perfil')" transform="translate(2,0)">
-                        <rect rx="4" x="5" y ="45" width="65" height="24" fill="#008069" stroke="#F5F5F5" stroke-width="2"/>
-                        <rect id="edit-perfil-bck" rx="4" x="5" y ="45" width="65" height="24" fill="#81B8B2" fill-opacity="0"/>
-                        <text x="10" y="62" class="font_nova_conv">PERFIL</text>
-                    </g>
-                    <g onclick="menu('edit-conf')" transform="translate(2,0)">
-                        <rect rx="4" x="5" y ="75" width="65" height="24" fill="#008069" stroke="#F5F5F5" stroke-width="2"/>
-                        <rect id="edit-conf-bck" rx="4" x="5" y ="75" width="65" height="24" fill="#81B8B2" fill-opacity="0"/>
-                        <text x="10" y="92" class="font_nova_conv">CONTA</text>
-                    </g>
-                    <g transform="translate(7,0)">
-                        <g onclick="menu('nova-conversa')" id="conversa" transform="translate(32,-5)">
-                            <path d="M168.07 52C164.338 52 160.759 52.7452 158.121 54.0716C155.482 55.3981 154 57.1971 154 59.073V104.315C154 104.665 154.207 105.007 154.594 105.298C154.981 105.589 155.531 105.815 156.174 105.949C156.817 106.083 157.525 106.117 158.207 106.049C158.89 105.98 159.516 105.811 160.008 105.564L180.078 95.4741C181.397 94.8108 183.186 94.4381 185.052 94.4379H252.487C256.218 94.4379 259.797 93.6927 262.436 92.3663C265.074 91.0398 266.557 89.2408 266.557 87.3649V59.073C266.557 57.1971 265.074 55.3981 262.436 54.0716C259.797 52.7452 256.218 52 252.487 52H168.07Z" fill="#21C65D"/>
-                            <path id="nova-conversa-bck" d="M168.07 52C164.338 52 160.759 52.7452 158.121 54.0716C155.482 55.3981 154 57.1971 154 59.073V104.315C154 104.665 154.207 105.007 154.594 105.298C154.981 105.589 155.531 105.815 156.174 105.949C156.817 106.083 157.525 106.117 158.207 106.049C158.89 105.98 159.516 105.811 160.008 105.564L180.078 95.4741C181.397 94.8108 183.186 94.4381 185.052 94.4379H252.487C256.218 94.4379 259.797 93.6927 262.436 92.3663C265.074 91.0398 266.557 89.2408 266.557 87.3649V59.073C266.557 57.1971 265.074 55.3981 262.436 54.0716C259.797 52.7452 256.218 52 252.487 52H168.07Z" fill="#81B8B2" fill-opacity="0"/>
-                            <text class="font_nova_conv" x="184" y="70">NOVA</text>
-                            <text class="font_nova_conv" x="162" y="86">CONVERSA</text>
-                        </g>
-                        <g onclick="menu('search')">
-                            <rect rx="8" id="search-bck" x="315" y="40" width="40" height="47" fill="#81B8B2" fill-opacity="0"/>
-                            <path id="menu-search" d="M344.056 77L335.306 68.95C334.611 69.4611 333.812 69.8657 332.91 70.1639C332.007 70.462 331.046 70.6111 330.028 70.6111C327.505 70.6111 325.369 69.807 323.622 68.1987C321.875 66.5904 321.001 64.626 321 62.3056C321 59.9843 321.874 58.0199 323.622 56.4124C325.37 54.805 327.506 54.0009 330.028 54C332.551 54 334.686 54.8041 336.433 56.4124C338.181 58.0207 339.055 59.9851 339.056 62.3056C339.056 63.2426 338.894 64.1264 338.569 64.9569C338.245 65.7875 337.806 66.5222 337.25 67.1611L346 75.2111L344.056 77ZM330.028 68.0556C331.764 68.0556 333.24 67.4963 334.456 66.3778C335.671 65.2594 336.279 63.9019 336.278 62.3056C336.278 60.7083 335.67 59.3505 334.454 58.232C333.238 57.1135 331.763 56.5547 330.028 56.5556C328.292 56.5556 326.816 57.1148 325.6 58.2333C324.384 59.3518 323.777 60.7092 323.778 62.3056C323.778 63.9028 324.386 65.2606 325.601 66.3791C326.817 67.4976 328.293 68.0564 330.028 68.0556Z" fill="#F5F5F5"/>
-                        </g>
-                    </g>
-                    <g onclick="menu('outros')" id="menu-outros">
-                        <rect rx="8" id="outros-bck" x="355" y="40" width="33" height="47" fill="#81B8B2" fill-opacity="0"/>
-                        <path d="M368.704 63.408C368.704 62.512 368.981 61.7653 369.536 61.168C370.091 60.5707 370.848 60.272 371.808 60.272C372.768 60.272 373.525 60.5707 374.08 61.168C374.635 61.7653 374.912 62.512 374.912 63.408C374.912 64.304 374.635 65.0507 374.08 65.648C373.525 66.2453 372.768 66.544 371.808 66.544C370.848 66.544 370.091 66.2453 369.536 65.648C368.981 65.0507 368.704 64.304 368.704 63.408Z" fill="#F5F5F5"/>
-                        <path d="M368.704 54.408C368.704 53.512 368.981 52.7653 369.536 52.168C370.091 51.5707 370.848 51.272 371.808 51.272C372.768 51.272 373.525 51.5707 374.08 52.168C374.635 52.7653 374.912 53.512 374.912 54.408C374.912 55.304 374.635 56.0507 374.08 56.648C373.525 57.2453 372.768 57.544 371.808 57.544C370.848 57.544 370.091 57.2453 369.536 56.648C368.981 56.0507 368.704 55.304 368.704 54.408Z" fill="#F5F5F5"/>
-                        <path d="M368.704 72.408C368.704 71.512 368.981 70.7653 369.536 70.168C370.091 69.5707 370.848 69.272 371.808 69.272C372.768 69.272 373.525 69.5707 374.08 70.168C374.635 70.7653 374.912 71.512 374.912 72.408C374.912 73.304 374.635 74.0507 374.08 74.648C373.525 75.2453 372.768 75.544 371.808 75.544C370.848 75.544 370.091 75.2453 369.536 74.648C368.981 74.0507 368.704 73.304 368.704 72.408Z" fill="#F5F5F5"/>
-                    </g>
-                </g>
-                <g id="menu-selecionado" class="menu-item-selecionado hide">
-                    <rect x="0" y="35" width="366" height="75" fill="#008069"/>
-                    <g onclick="menu('voltar')">
-                        <rect id="voltar-bck" rx="20" x="10" y="43" width="43" height="55" fill="#81B8B2" fill-opacity="0"/>
-                        <path id="sel-icone-voltar" d="M17.8167 72.9333C17.8167 73.55 18.0167 74.0667 18.4333 74.4667L24.8333 80.7167C25.2 81.1333 25.6833 81.35 26.25 81.35C26.8333 81.35 27.3333 81.15 27.7333 80.7667C28.1333 80.3833 28.35 79.8833 28.35 79.3C28.35 78.7167 28.15 78.2167 27.7333 77.8167L25 75.0833H42.1667C42.75 75.0833 43.2333 74.8833 43.6167 74.4667C44 74.05 44.1833 73.55 44.1833 72.9667C44.1833 72.3833 44 71.8833 43.6167 71.4667C43.2333 71.05 42.75 70.8333 42.1667 70.8167H25L27.7333 68.05C28.1333 67.65 28.35 67.1667 28.35 66.6167C28.35 66.0333 28.15 65.5333 27.7333 65.1333C27.3167 64.7333 26.8333 64.5 26.2333 64.5C25.7 64.5 25.2167 64.7333 24.8167 65.1833L18.4166 71.4333C18.0166 71.85 17.8167 72.3333 17.8167 72.9333Z" fill="#FFFBFF"/>
-                    </g>
-                    <text id="sel-nb-selecionados" class="sel-nb-sel" x="53" y="80">1</text>
-                    <g onclick="menu('fixar')">
-                        <rect id="fixar-bck" rx="10" x="100" y="43" width="50" height="65" fill="#81B8B2" fill-opacity="0"/>
-                        <text id="sel-label-fixar" class="sel-item-label" x="104" y="100" >FIXAR</text>
-                        <path id="sel-icone-fixar" fill-rule="evenodd" clip-rule="evenodd" d="M135.275 53.4097C135.059 53.1945 134.778 53.0554 134.476 53.0134C134.174 52.9714 133.867 53.0288 133.6 53.177C133.333 53.3251 133.122 53.556 132.998 53.8347C132.874 54.1135 132.844 54.425 132.913 54.7222L126.669 60.966H122.011C119.922 60.966 118.878 63.4897 120.354 64.9672L123.937 68.5504L116.962 76.3035C116.342 76.9922 116 77.8859 116 78.8122V79.2472H116.437C117.363 79.247 118.255 78.9044 118.944 78.2854L126.697 71.3085L130.28 74.8897C131.758 76.3672 134.281 75.321 134.281 73.2341V68.5785L140.525 62.3347C140.823 62.4039 141.135 62.3743 141.414 62.2503C141.693 62.1263 141.925 61.9147 142.073 61.6475C142.221 61.3803 142.278 61.0721 142.236 60.7695C142.194 60.4669 142.054 60.1864 141.837 59.9704L140.707 58.8379L136.407 54.5385L135.275 53.4079V53.4097Z" fill="#FEFEFF"/>
-                    </g>
-                    <g onclick="menu('apagar')">
-                        <rect id="apagar-bck" rx="10" x="153" y="43" width="57" height="65" fill="#81B8B2" fill-opacity="0"/>
-                        <text id="sel-label-apagar" class="sel-item-label" x="155" y="100" >APAGAR</text>
-                        <path id="icone-apagar" d="M190.5 54.25H186.125L184.875 53H178.625L177.375 54.25H173V56.75H190.5M174.25 73C174.25 73.663 174.513 74.2989 174.982 74.7678C175.451 75.2366 176.087 75.5 176.75 75.5H186.75C187.413 75.5 188.049 75.2366 188.518 74.7678C188.987 74.2989 189.25 73.663 189.25 73V58H174.25V73Z" fill="#FEFEFF"/>
-                    </g>
-                    <g onclick="menu('silenciar')">
-                        <rect id="silenciar-bck" rx="10" x="212" y="43" width="75" height="65" fill="#81B8B2" fill-opacity="0"/>
-                        <text id="sel-label-silenciar" class="sel-item-label" x="218" y="100" >SILENCIAR</text>
-                        <path id="icone-silenciar" d="M236.948 53.0041C236.737 53.0423 236.541 53.1386 236.381 53.2823C236.222 53.4259 236.106 53.6112 236.046 53.8172C235.986 54.0233 235.985 54.2419 236.042 54.4487C236.1 54.6554 236.214 54.842 236.371 54.9875L259.448 78.0645C259.55 78.19 259.677 78.2928 259.821 78.3662C259.965 78.4395 260.123 78.4817 260.285 78.4901C260.446 78.4985 260.608 78.4728 260.759 78.4148C260.91 78.3568 261.047 78.2678 261.161 78.1534C261.275 78.039 261.364 77.9019 261.422 77.751C261.48 77.6 261.505 77.4386 261.497 77.2771C261.488 77.1157 261.446 76.9578 261.373 76.8138C261.299 76.6697 261.196 76.5427 261.071 76.441L252.525 67.8968V54.5179C252.525 53.0583 251.25 52.6925 250.253 53.6895L244.231 59.6029L237.995 53.3641C237.876 53.2372 237.73 53.1389 237.567 53.0766C237.405 53.0143 237.23 52.9895 237.057 53.0041C237.021 53.0024 236.984 53.0024 236.948 53.0041ZM238.679 61.1537C238.043 61.1537 237.525 61.6706 237.525 62.3075V69.2306C237.525 69.8652 238.043 70.3845 238.679 70.3845H242.646L250.218 77.7748C251.371 78.9287 252.525 78.3379 252.525 76.7652V73.8079L239.869 61.1537H238.679Z" fill="#FEFEFF"/>
-                    </g>
-                    <g onclick="menu('arquivar')">
-                        <rect id="arquivar-bck" rx="10" x="289" y="43" width="70" height="65" fill="#81B8B2" fill-opacity="0"/>
-                        <text id="sel-label-arquivar" class="sel-item-label" x="295" y="100" >ARQUIVAR</text>
-                        <path id="icone-arquivar" d="M313 76.5V57.5L315.875 54H332.625L335.5 57.5V76.5H313ZM316 57.75H332.5L331.438 56.5H317.062L316 57.75ZM324.25 72.75L329.25 67.75L327.5 66L325.5 68V62.75H323V68L321 66L319.25 67.75L324.25 72.75Z" fill="#FEFEFF"/>
-                    </g>
-                </g>
-                <g>
-                    <g id="menu-grupo-inativo" transform="translate(0,5)">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20.25 108.458C20.25 107.011 20.9085 105.622 22.0806 104.599C23.2527 103.575 24.8424 103 26.5 103C28.1576 103 29.7473 103.575 30.9194 104.599C32.0915 105.622 32.75 107.011 32.75 108.458C32.75 109.906 32.0915 111.294 30.9194 112.318C29.7473 113.342 28.1576 113.917 26.5 113.917C24.8424 113.917 23.2527 113.342 22.0806 112.318C20.9085 111.294 20.25 109.906 20.25 108.458ZM32.75 112.825C32.75 111.667 33.2767 110.556 34.2144 109.737C35.1521 108.918 36.4238 108.458 37.7499 108.458C39.076 108.458 40.3477 108.918 41.2854 109.737C42.2231 110.556 42.7499 111.667 42.7499 112.825C42.7499 113.983 42.2231 115.094 41.2854 115.913C40.3477 116.732 39.076 117.192 37.7499 117.192C36.4238 117.192 35.1521 116.732 34.2144 115.913C33.2767 115.094 32.75 113.983 32.75 112.825ZM10.2501 112.825C10.2501 111.667 10.7769 110.556 11.7146 109.737C12.6523 108.918 13.924 108.458 15.2501 108.458C16.5762 108.458 17.8479 108.918 18.7856 109.737C19.7233 110.556 20.25 111.667 20.25 112.825C20.25 113.983 19.7233 115.094 18.7856 115.913C17.8479 116.732 16.5762 117.192 15.2501 117.192C13.924 117.192 12.6523 116.732 11.7146 115.913C10.7769 115.094 10.2501 113.983 10.2501 112.825ZM17.0167 120.637C18.0333 119.246 19.4352 118.1 21.0927 117.307C22.7503 116.514 24.61 116.099 26.5 116.1C28.083 116.099 29.6485 116.39 31.094 116.953C32.5394 117.517 33.8322 118.341 34.8878 119.371C35.9434 120.402 36.7379 121.615 37.2193 122.932C37.7008 124.249 37.8583 125.64 37.6816 127.014C37.66 127.185 37.5926 127.349 37.4848 127.492C37.3771 127.636 37.2321 127.755 37.0616 127.841C33.8475 129.451 30.2055 130.297 26.5 130.292C22.7944 130.297 19.1523 129.452 15.9384 127.841C15.7679 127.755 15.6229 127.636 15.5152 127.492C15.4074 127.349 15.34 127.185 15.3184 127.014C15.0385 124.782 15.6375 122.533 17.0167 120.639V120.637Z" fill="#7ABDAE"/>
-                        <path d="M14.9701 119.381C13.3264 121.597 12.5605 124.223 12.7901 126.855C11.7893 126.723 10.805 126.508 9.85013 126.215L9.65846 126.157C9.48746 126.104 9.33772 126.009 9.22738 125.883C9.11704 125.757 9.05084 125.606 9.0368 125.448L9.02013 125.272C8.95281 124.541 9.05473 123.806 9.31981 123.11C9.58488 122.415 10.0077 121.773 10.563 121.223C11.1183 120.673 11.7947 120.227 12.5519 119.91C13.3091 119.594 14.1315 119.414 14.9701 119.381ZM40.2099 126.855C40.4395 124.223 39.6736 121.597 38.0299 119.381C38.8685 119.414 39.6909 119.594 40.4481 119.91C41.2053 120.227 41.8817 120.673 42.437 121.223C42.9923 121.773 43.4151 122.415 43.6802 123.11C43.9453 123.806 44.0472 124.541 43.9799 125.272L43.9632 125.448C43.9488 125.606 43.8825 125.756 43.7722 125.882C43.6619 126.007 43.5123 126.102 43.3415 126.155L43.1499 126.214C42.2049 126.505 41.2232 126.722 40.2099 126.855Z" fill="#7ABDAE"/>
-                    </g>
-                    <text id="menu-conversas" class="aba_ativa" x="57" y="131">CONVERSAS</text>
-                    <path id="selecao-conversa" fill-rule="evenodd" clip-rule="evenodd" d="M44.225 144.5C44.225 143.923 44.5648 143.37 45.1696 142.962C45.7744 142.554 46.5947 142.325 47.45 142.325H163.55C164.405 142.325 165.226 142.554 165.83 142.962C166.435 143.37 166.775 143.923 166.775 144.5C166.775 145.077 166.435 145.63 165.83 146.038C165.226 146.446 164.405 146.675 163.55 146.675H47.45C46.5947 146.675 45.7744 146.446 45.1696 146.038C44.5648 145.63 44.225 145.077 44.225 144.5Z" fill="#F5F5F5"/>
-                    <text id="menu-status" class="aba_inativa" x="189" y="131">STATUS</text>
-                    <text id="menu-chamada" class="aba_inativa" x="282" y="131">CHAMADAS</text>
-                </g>
-            </g>
-            <g id="conversas">
-                <script>chat_svg()</script>
-            </g>
-            <g id="outros-menu" class="hide">
-                <rect onclick="outrosMenu('close')" id="menu-outros-mask" x="0" y="0" width="390" height="844" fill="#ffffff" fill-opacity="0"/>
-                <rect id="menu-outros-bck" x="166" y="99" width="221" height="256" rx="15" fill="#D9D9D9"/>
-                <g onclick="outrosMenu('novo-grupo')">
-                    <rect id="novo-grupo-bck" rx="12" x="170" y="104" height="34" width="210" fill="#aaaaaa" fill-opacity="0"/>
-                    <text class="outros-item-label" x="178" y="127">NOVO GRUPO</text>
-                </g>
-                <g onclick="outrosMenu('nova-transimissao')">
-                    <rect id="nova-transimissao-bck" rx="12" x="170" y="139" height="34" width="210" fill="#aaaaaa" fill-opacity="0"/>
-                    <text class="outros-item-label" x="178" y="162">NOVA TRANSMISSÂO</text>
-                </g>
-                <g onclick="outrosMenu('aparelhos-conectados')">
-                    <rect id="aparelhos-conectados-bck" rx="12" x="170" y="174" height="34" width="210" fill="#aaaaaa" fill-opacity="0"/>
-                    <text class="outros-item-label" x="178" y="197">APARELHOS CONECTADOS</text>
-                </g>
-                <g onclick="outrosMenu('mensagens-favoritas')">
-                    <rect id="mensagens-favoritas-bck" rx="12" x="170" y="209" height="34" width="210" fill="#aaaaaa" fill-opacity="0"/>
-                    <text class="outros-item-label" x="178" y="232">MENSAGENS FAVORITAS</text>
-                </g>
-                <g onclick="outrosMenu('encontrar-empresas')">
-                    <rect id="encontrar-empresas-bck" rx="12" x="170" y="244" height="34" width="210" fill="#aaaaaa" fill-opacity="0"/>
-                    <text class="outros-item-label" x="178" y="267">ENCONTRAR EMPRESAS</text>
-                </g>
-                <g onclick="outrosMenu('pagamentos')">
-                    <rect id="pagamentos-bck" rx="12" x="170" y="279" height="34" width="210" fill="#aaaaaa" fill-opacity="0"/>
-                    <text class="outros-item-label" x="178" y="302">PAGAMENTOS</text>
-                </g>
-                <g onclick="outrosMenu('configuracoes')">
-                    <rect id="configuracoes-bck" rx="12" x="170" y="314" height="34" width="210" fill="#aaaaaa" fill-opacity="0"/>
-                    <text class="outros-item-label" x="178" y="337">CONFIGURAÇÕES</text>
-                </g>
-            </g>
-            <g id="nao_implementado" class="transparento hide">
-                <rect rx="15" x="100" y="600" height="90" width="190" fill="#FFDDDD"/>
-                <text x="146" y="630" class="notificacao_erro">FUNCÃO NÃO</text>
-                <text x="150" y="650" class="notificacao_erro">DISPONÍVEL</text>
-                <text x="138" y="670" class="notificacao_erro">NESTA VERSÃO</text>
-            </g>
-        </g>
-    </g>
-    <defs>
-        <script>chat_defs()</script>
-        <clipPath id="clip0_0_3">
-            <rect width="390" height="815" fill="white"/>
-        </clipPath>
-        <clipPath id="corte-edit">
-            <path d="m 60,50 h 50 v 27 h 40 v 40 h -90 Z" fill="white"/>
-        </clipPath>
-    </defs>
-</svg>
+    <div id="cabecalho">
+        <div id="menu-nao-selecionado" class="cabecalho-linha">
+            <div>
+                <div onclick="menu('edit-perfil')" id="edit-perfil" class="font_nova_conv">PERFIL</div>
+                <div onclick="menu('edit-conta')" id="edit-conta" class="font_nova_conv">CONTA</div>
+            </div>
+            <div onclick="menu('edit-foto')" id="edicao-foto">
+                <img id="foto-perfil" src="assets/conv/perfil/0.png" width="50" height="50">
+                <img id="edit-foto" src="assets/img/edit.svg">
+            </div>
+            <div onclick="menu('nova-conversa')" id="nova-conversa" class="font_nova_conv" style="background-image: url('assets/img/back-nova-conversa.svg');">
+                <div>NOVA</div>
+                <div>CONVERSA</div>
+            </div>
+            <div class="flex">
+                <div onclick="menu('search')" id="search">
+                    <img src="assets/img/menu-search.svg">
+                </div>
+                <div onclick="menu('outros')" id="outros">
+                    <img src="assets/img/menu-outros.svg">
+                </div>
+            </div>
+        </div>
+        <div id="menu-selecionado" class="cabecalho-linha" style="display:none">
+            <div onclick="menu('voltar')" id="voltar">
+                <img src="assets/img/voltar.svg">
+                <div id="sel-nb-selecionados"> 1 </div>
+            </div>
+            <div class="flex" style="margin-right: 20px;">
+                <div id="fixar" onclick="menu('fixar')" class="item-sel">
+                    <div>
+                        <div><img src="assets/img/menu-fixar.svg"></div>
+                        <div>FIXAR</div>
+                    </div>
+                </div>
+                <div id="apagar" onclick="menu('apagar')" class="item-sel">
+                    <div>
+                        <div><img src="assets/img/menu-apagar-chat.svg"></div>
+                        <div>APAGAR</div>
+                    </div>
+                </div>
+                <div id="silenciar" onclick="menu('silenciar')" class="item-sel">
+                    <div>
+                        <div><img src="assets/img/menu-silenciar.svg"></div>
+                        <div>SILENCIAR</div>
+                    </div>
+                </div>
+                <div id="arquivar" onclick="menu('arquivar')" class="item-sel">
+                    <div>
+                        <div><img src="assets/img/menu-aquivar.svg"></div>
+                        <div>ARQUIVAR</div>
+                    </div>
+                </div>   
+            </div>         
+        </div>
+        <div class="cabecalho-linha">
+            <div id="comunidade">
+                <img src="assets/img/menu-comunidade.svg">
+            </div>
+            <div class="aba_ativa">
+                CONVERSAS
+            </div>
+            <div class="aba_inativa">
+                ATUALIZAÇÕES
+            </div>
+            <div class="aba_inativa">
+                LIGAÇÕES
+            </div>
+        </div>
+    </div>
+    <div id="conversas" class="mt-5"></div>
+    <div id="outros-menu" class="hide" >
+        <div id="outros-menu-mascara" onclick="outrosMenu('close')"></div>
+        <ul id="outros-menu-items">
+            <li onclick="outrosMenu('novo-grupo')" class="outros-item-label">NOVO GRUPO</li>
+            <li onclick="outrosMenu('nova-transimissao')" class="outros-item-label">NOVA TRANSMISSÂO</li>
+            <li onclick="outrosMenu('aparelhos-conectados')" class="outros-item-label">APARELHOS CONECTADOS</li>
+            <li onclick="outrosMenu('mensagens-favoritas')" class="outros-item-label">MENSAGENS FAVORITAS</li>
+            <li onclick="outrosMenu('encontrar-empresas')" class="outros-item-label">ENCONTRAR EMPRESAS</li>
+            <li onclick="outrosMenu('pagamentos')" class="outros-item-label">PAGAMENTOS</li>
+            <li onclick="outrosMenu('configuracoes')" class="outros-item-label">CONFIGURAÇÕES</li>
+        </ul>
+    </div>   
+    <div id="nao_implementado" class="transparento hide">
+        <div id="nao_implementado-text">
+            FUNCÃO NÃO DISPONÍVEL NESTA VERSÃO
+        </div>
+    </div>
 </body>
 </html>

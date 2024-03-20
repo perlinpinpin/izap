@@ -1,7 +1,7 @@
 * {
     margin: 0px;
     font-family: 'Archivo', sans-serif;
-    /*  */
+    touch-action: none;
 }
 
 .hide {
@@ -73,9 +73,21 @@
     background-color: white;
 }
 
-#cabecalho {
-    background-color: #008069;
-    height: 85px;
-    min-height: 85px;
-    position: relative;
+#nao_implementado {
+    position: absolute;
+    top: 200px;
+    width: 100vw;
+}
+
+#nao_implementado-text {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 15px;
+    margin: auto;
+    width: 190px;
+    max-width: 190px;
+    background-color: #FFDDDD;
+    text-align: center;
+    padding: 20px 20px 20px 20px;
 }
