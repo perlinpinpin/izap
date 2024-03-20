@@ -14,7 +14,7 @@ const resourceToPrecache = [
     'assets/img/descartar.png',
     'assets/img/deslize-norte.png',
     'assets/img/deslize.png',
-    'assets/img/empresa.png',
+    'assets/img/contatos-empresa.png',
     'assets/img/lock.png',
     'assets/img/microfone.png',
     'assets/img/pause.png',

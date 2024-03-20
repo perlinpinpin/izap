@@ -75,7 +75,7 @@ function responder () {
 
 function menu (item) {
     if (item == 'voltar') execComBckFeedback ('voltar', '#81B8B2', () => {window.location = 'chat.html';});
-    else if (item == 'perfil') execComBckFeedback ('perfil', '#81B8B2', () => {window.location = 'test.html';});
+    else if (item == 'perfil') execComBckFeedback ('perfil', '#81B8B2', naoImplementado);
     else if (item == 'visio') execComBckFeedback ('visio', '#81B8B2', naoImplementado);
     else if (item == 'fone') execComBckFeedback ('fone', '#81B8B2', naoImplementado);
     else if (item == 'outros') execComBckFeedback ('outros', '#81B8B2', naoImplementado);
@@ -364,7 +364,7 @@ function criarMsg (msg) {
     if (msg.fluxo == 'in') {
         dv.style.justifyContent = 'start';
         box.style.background = 'white';
-        arrow.innerHTML = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 10'><path d='m 0,0 h 20 v 10 z' fill='white'/></svg>";
+        arrow.innerHTML = "<img src='assets/img/conversa-in.svg'>";
         dv.appendChild (arrow);
         dv.appendChild (box);
         arrow.style.position = 'relative';
@@ -373,7 +373,7 @@ function criarMsg (msg) {
     else {
         dv.style.justifyContent = 'end';
         box.style.background = '#E7FFDB';
-        arrow.innerHTML = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 10'><path d='m 20,0 h -20 v 10 z' fill='#E7FFDB'/></svg>";
+        arrow.innerHTML = "<img src='assets/img/conversa-out.svg'>";
         dv.appendChild (box);
         dv.appendChild (arrow);
         arrow.style.position = 'relative';
@@ -502,14 +502,6 @@ function criarConversa () {
     setTimeout (() => {
         conv.scroll (0, conv.scrollHeight);
     }, 100);
-}
-
-function keyDown (letra) {
-    document.getElementById (letra).setAttribute ('fill-opacity', '0.2');
-}
-
-function keyUp (letra) {
-    document.getElementById (letra).setAttribute ('fill-opacity', '0');
 }
 
 function addNovaMensagem (tipo, content) {

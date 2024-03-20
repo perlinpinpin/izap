@@ -1,50 +1,36 @@
 
 function abrirConversa (evt, id) {
-    var svgobj = document.getElementById ('conversa-' + id);
-    svgobj.style.fill = '#eeeeee';
+    var svgobj = document.getElementById ('contato-' + id);
+    svgobj.style.backgroundColor = '#eeeeee';
     setTimeout (() => {
-        svgobj.style.fill = '#ffffff';
+        svgobj.style.backgroundColor = '#ffffff';
         window.location = 'conversa.html?id=' + id;
     }, 150);
 }
 
-function lista_contatos_defs () {
-    let defs = '';
+function lista_contatos_html () {
+    let content = '';
+    for (let index = 0; index < 5; index++) {
     for (let i = 0; i < users.length; i++) {
         const u = users [i];
-        defs += '<pattern id="pattern' + u.id + '" patternContentUnits="objectBoundingBox" width="1" height="1">';
-        defs += '   <use xlink:href="#image' + u.id + '" transform="matrix(0.003125 0 0 0.00445602 0 -0.212963)"/>';
-        defs += '</pattern>';
-        defs += '<image id="image' + u.id + '" width="320" height="320" xlink:href="' + u.foto + '"/>';
-        defs += '<clipPath id="clip-foto">';
-        defs += '   <ellipse rx="27" ry="27" cx="45" cy="443" fill="white"/>';
-        defs += '</clipPath>';
+        content += '<div id="contato-' + u.id + '" onclick="abrirConversa(event,' + u.id + ')"  class="menu-item">';
+        content += '    <div class="menu-icone"><img src="' + u.foto + '" width="50" height="50" style="border-radius:50px"></div>'
+        content += '    <div>'
+        content += '        <div class="nome">' + u.nome_expandido + '</div>'
+        content += '        <div class="status">' + u.status + '</div>'
+        content += '    </div>'
+        content += '</div>'
     }
-    document.write (defs);
-}
-
-function lista_contatos_svg () {
-    let trans = 0;
-    let svg = '';
-    for (let i = 0; i < users.length; i++) {
-        const u = users [i];
-        svg += '<g id="contato-' + u.id + '" onclick="abrirConversa(evt,' + u.id + ')" transform="translate(0,'+ trans + ')">';
-        svg += '    <rect id="conversa-' + u.id + '" x="0" y="410" width="420" height="60" fill="#ffffff"/>';
-        svg += '    <rect x="8" y="416" width="74" height="54" fill="url(#pattern' + u.id + ')" clip-path="url(#clip-foto)"/>';
-        svg += '    <text x="82" y="442" class="nome">' + u.nome_expandido + '</text>';
-        svg += '    <text x="82" y="462" class="status">' + u.status + '</text>';
-        svg += '</g>';
-        trans += 60;
     }
-    document.write (svg);
+    document.write (content);
 }
 
 function menu (item) {
-    if (item == 'voltar') execComOpacityFeedback ('voltar-bck', () => {window.location = 'chat.html'});
-    else if (item == 'search') execComOpacityFeedback ('search-bck', naoImplementado);
-    else if (item == 'outros') execComOpacityFeedback ('outros-bck', naoImplementado);
-    else if (item == 'novo-grupo') execComOpacityFeedback ('novo-grupo-bck', naoImplementado);
-    else if (item == 'novo-contato') execComOpacityFeedback ('novo-contato-bck', naoImplementado);
-    else if (item == 'nova-comunidade') execComOpacityFeedback ('nova-comunidade-bck', naoImplementado);
-    else if (item == 'empresas') execComOpacityFeedback ('empresas-bck', naoImplementado);
+    if (item == 'voltar') execComBckFeedback ('voltar', "#81B8B2", () => {window.location = 'chat.html'});
+    else if (item == 'search') execComBckFeedback ('search', "#81B8B2", naoImplementado);
+    else if (item == 'outros') execComBckFeedback ('outros', "#81B8B2", naoImplementado);
+    else if (item == 'novo-grupo') execComBckFeedback ('novo-grupo', "#eee", naoImplementado);
+    else if (item == 'novo-contato') execComBckFeedback ('novo-contato', "#eee", naoImplementado);
+    else if (item == 'nova-comunidade') execComBckFeedback ('nova-comunidade', "#eee", naoImplementado);
+    else if (item == 'empresas') execComBckFeedback ('empresas', "#eee", naoImplementado);
 }

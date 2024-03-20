@@ -171,14 +171,14 @@ body {
     font-family: 'Archivo', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    fill: #080808;
+    color: #080808;
 }
 
 #label-nb-selecionados {
     font-family: 'Archivo', sans-serif;
     font-weight: 600;
     font-size: 24px;
-    fill: #FFFFFF;
+    color: #FFFFFF;
 }
 
 .msg-txt {

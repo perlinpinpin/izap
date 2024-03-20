@@ -1,11 +1,3 @@
-function execComOpacityFeedback (id, toDo) {
-    var svgobj = document.getElementById (id);
-    svgobj.setAttribute ("fill-opacity","1.0");
-    setTimeout (() => {
-        svgobj.setAttribute ("fill-opacity","0.0");
-        toDo ();
-    }, 150);
-}
 
 function execComBckFeedback (id, bckCor, toDo) {
     var svgobj = document.getElementById (id);

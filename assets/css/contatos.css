@@ -1,42 +1,92 @@
+/* Cabeçalho */
 
-.nome {
-    font-family: 'Archivo', sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    fill: #000000;   
+#cabecalho {
+    background-color: #008069;
+    height: 80px;
+    min-height: 80px;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+    position: sticky;
+    top: 0;
 }
 
-.status {
+#voltar {
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#outros {
+    padding: 10px;
+    padding-left: 10px;
+}
+
+#titulo {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #FFFFFF;
+    padding: 0px 10px 10px 10px;
+}
+
+#subtitulo {
     font-family: 'Archivo', sans-serif;
     font-weight: 400;
     font-size: 15px;
-    fill: #6B6A6A;   
+    color: #ffffff;
+    padding-left: 10px;
 }
 
+#search {
+    padding: 15px 5px 15px 10px;
+}
+
+#outros {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* menu static */
+
 .menu-item {
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.menu-icone {
+    min-width: 80px;
+    text-align: center;
+}
+
+.menu-label {
     font-family: 'Archivo', sans-serif;
     font-weight: 700;
-    font-size: 20px;
-    fill: #000000; 
+    font-size: 16px;
+    color: #010101; 
 }
 
 .menu-categoria {
     font-family: 'Archivo', sans-serif;
     font-weight: 700;
     font-size: 15px;
-    fill: #999999; 
+    color: #999999; 
+    padding-left: 20px;
+    padding-top: 10px;
 }
 
-#label-contatos {
+.nome {
     font-family: 'Archivo', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 20px;
-    fill: #ffffff; 
+    color: #000000;   
 }
 
-#label-contatos-contatos {
+.status {
     font-family: 'Archivo', sans-serif;
     font-weight: 400;
     font-size: 15px;
-    fill: #ffffff;
+    color: #6B6A6A;   
 }
