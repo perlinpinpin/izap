@@ -5,7 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <meta name="viewport" content="device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IZap</title>
     <link rel="icon" href="assets/icons/zap.svg">
     <link rel="manifest" href="manifest.json">
@@ -25,13 +25,13 @@
             <img src="assets/img/menu-search.svg">
         </div>
     </div>
-    <div onclick="menu('usuario')" id="usuario">
+    <div onclick="menu('usuario', event)" id="usuario">
         <div class="fc">
-            <script>printFoto (0, 90);</script>
+            <div><script>printFoto (0, 90);</script></div>
             <div class="ml-10">
                 <div id="nome"><script>document.write (users [0].nome)</script></div>
                 <div id="status">MEU STATUS</div>
-                <div onclick="menu('trocar-foto')" id="trocar-foto">TROCAR FOTO</div>
+                <div onclick="menu('trocar-foto', event)" id="trocar-foto">TROCAR FOTO</div>
             </div>
         </div>
         <img src="assets/img/qrcode.svg">

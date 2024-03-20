@@ -23,7 +23,7 @@
                 <div onclick="menu('edit-conta')" id="edit-conta" class="font_nova_conv">CONTA</div>
             </div>
             <div onclick="menu('edit-foto')" id="edicao-foto">
-                <img id="foto-perfil" src="assets/conv/perfil/0.png" width="50" height="50">
+                <script>document.write ('<img id="foto-perfil" src="' + users [0].foto + '" width="50" height="50">')</script>
                 <img id="edit-foto" src="assets/img/edit.svg">
             </div>
             <div onclick="menu('nova-conversa')" id="nova-conversa" class="font_nova_conv" style="background-image: url('assets/img/back-nova-conversa.svg');">

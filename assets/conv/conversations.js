@@ -233,7 +233,7 @@ function printFotoPath (id, size) {
 }
 
 function printFoto (id, size) {
-    let svg = '<img width="' + size + '" height="' + size + '" src="' + users [id].foto + '" style="border-radius:'+ (size / 2) +'px"/>'
+    let svg = '<img id="image' + id + '" width="' + size + '" height="' + size + '" src="' + users [id].foto + '" style="border-radius:'+ (size / 2) +'px"/>'
     document.write (svg);
 }
 

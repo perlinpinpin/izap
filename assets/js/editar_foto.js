@@ -5,14 +5,14 @@ if (voltar == null) {
 }
 
 function menu (item) {
-    if (item == 'voltar') execComOpacityFeedback ('voltar-bck', () => {window.location = voltar + '.html';});
-    else if (item == 'edit') execComOpacityFeedback ('edit-bck', () => {document.getElementById ('image-sel').click ();});
-    else if (item == 'search') execComOpacityFeedback ('search-bck', naoImplementado);
-    else if (item == 'foto') execComOpacityFeedback ('foto-bck', () => {document.getElementById ('image-sel').click ();});
-    else if (item == 'camera') execComOpacityFeedback ('camera-bck', () => {document.getElementById ('capture-sel').click ();});
-    else if (item == 'galeria') execComOpacityFeedback ('galeria-bck', () => {document.getElementById ('image-sel').click ();});
-    else if (item == 'avatar') execComOpacityFeedback ('avatar-bck', naoImplementado);
-    else if (item == 'deletar') execComOpacityFeedback ('deletar-bck', naoImplementado);
+    if (item == 'voltar') execComBckFeedback ('voltar', '#81B8B2', () => {window.location = voltar + '.html';});
+    else if (item == 'edit') execComBckFeedback ('edit', '#81B8B2', () => {document.getElementById ('image-sel').click ();});
+    else if (item == 'search') execComBckFeedback ('search', '#81B8B2', naoImplementado);
+    else if (item == 'foto') execComBckFeedback ('foto', '#81B8B2', () => {document.getElementById ('image-sel').click ();});
+    else if (item == 'camera') execComBckFeedback ('camera', '#81B8B2', () => {document.getElementById ('capture-sel').click ();});
+    else if (item == 'galeria') execComBckFeedback ('galeria', '#81B8B2', () => {document.getElementById ('image-sel').click ();});
+    else if (item == 'avatar') execComBckFeedback ('avatar', '#81B8B2', naoImplementado);
+    else if (item == 'apagar') execComBckFeedback ('apagar', '#81B8B2', naoImplementado);
 }
 
 function selecao (evt) {
@@ -20,7 +20,7 @@ function selecao (evt) {
     if (file) {
         const reader = new FileReader ();
         reader.onload = () => {
-            document.getElementById ('image0').href.baseVal = reader.result;
+            document.getElementById ('foto').src = reader.result;
             users [0].foto = reader.result;
             usersUpdated ();
         }

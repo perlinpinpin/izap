@@ -1,9 +1,61 @@
+/* Cabeçalho */
+
+#cabecalho {
+    background-color: #008069;
+    height: 80px;
+    min-height: 80px;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#voltar {
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#titulo-configuracoes {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 15px 10px 15px 10px;
+}
+
+#search {
+    padding: 15px 5px 15px 5px;
+}
+#edit {
+    padding: 15px 5px 15px 5px;
+}
+
+/* menu-bottom */
+
+#menu-bottom {
+    background-color: #008069;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    width: calc(100% - 35px);
+    justify-content: space-between;
+    padding: 10px 10px 10px 25px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.item-bottom {
+    text-align:center;
+    margin-left:15px;
+}
 
 .label {
     font-family: 'Archivo', sans-serif;
     font-weight: 700;
     font-size: 16px;
     fill: #FFFFFF;
+    color: #FFFFFF;
+    margin-bottom: 10px;
 }
 
 .label-botao {
@@ -11,11 +63,13 @@
     font-weight: 600;
     font-size: 16px;
     fill: #FFFFFF;
+    color: #FFFFFF;
 }
 
-#label-deletar {
+.label-deletar {
     font-family: 'Archivo', sans-serif;
     font-weight: 700;
     font-size: 12px;
     fill: #FFFFFF;
+    color: #FFFFFF;
 }
