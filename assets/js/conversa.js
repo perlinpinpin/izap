@@ -266,6 +266,7 @@ function itemDragging (evt) {
     var nY = 0;
     if (evt.type == 'touchmove') var nY = evt.targetTouches [0].pageY;
     else nY = evt.x;
+    if (!dragging && Math.abs (yPressed - nY) < 20) return;
     document.getElementById ('conversa').scrollBy (0, yPressed - nY);
     yPressed = nY;
     if (itemPressed == false) return;
@@ -469,7 +470,7 @@ function criarMsg (msg) {
             content += '    </div>';
             content += '</div>';
             if (msg.tipo == 'au') {
-                setTimeout (() => createPlayer (msg.mess_id, msg.content [0 ]), 100);
+                setTimeout (() => createPlayer (msg.mess_id, msg.content [0]), 100);
             }
             box.style.paddingLeft = '10px';
             box.style.paddingTop = '5px';
