@@ -92,13 +92,25 @@
             </div>
         </div>
         <div class="flex mt-5">
-            <div>
-                <div id="espaco-interacao" class="espaco-interacao">
-                    <img id="espaco-interacao-emoji" src="assets/img/emoji.svg" onclick="menuInteracao('espaco-interacao-emoji')">
-                    <span onclick="menuInteracao('espaco-interacao-mensagem')" id='espaco-interacao-mensagem'>MENSAGEM</span>
-                    <span id="espaco-interacao-arquivo" onclick="menuInteracao ('espaco-interacao-arquivo')">ARQUIVO</span>
-                    <img src="assets/img/reais.svg" onclick="menuInteracao ('espaco-interacao-reais')" id="espaco-interacao-reais">
-                    <img src="assets/img/camera.svg" onclick="menuInteracao ('espaco-interacao-camera')" id="espaco-interacao-camera">
+            <div id="espaco-interacao" class="flex">
+                <div id="content-interacao">
+                    <div id="resp-ancora-int"></div>
+                    <div class="fc">
+                        <img id="espaco-interacao-emoji" src="assets/img/emoji.svg" onclick="menuInteracao('espaco-interacao-emoji')">
+                        <span onclick="menuInteracao('espaco-interacao-mensagem')" id='espaco-interacao-mensagem'>MENSAGEM</span>
+                        <span id="espaco-interacao-arquivo" onclick="menuInteracao ('espaco-interacao-arquivo')">ARQUIVO</span>
+                        <img src="assets/img/reais.svg" onclick="menuInteracao ('espaco-interacao-reais')" id="espaco-interacao-reais">
+                        <img src="assets/img/camera.svg" onclick="menuInteracao ('espaco-interacao-camera')" id="espaco-interacao-camera">
+                    </div>
+                </div>
+                <div onpointerdown="abrirMicrofone(event)" 
+                    onpointerup="fecharMicrofone(event)" 
+                    ontouchmove="toucheMove(event)"
+                    ontouchend="dragEnd(event)"
+                    ondrag="dragEvt(event)"
+                    ondragend="dragEnd(event)"
+                    id="icone-microfone" class="microfone-fechado">
+                    <span style="background-image:url(assets/img/microfone.svg);width:24px;height:30px"></span>
                 </div>
             </div>
             <div id="espaco-digitacao" class="div-digitacao" style="display:none;"> 
@@ -125,15 +137,6 @@
                 <span id="label-control-audio">
                     DESLIZE PARA CONTROLAR  A GRAVAÇÃO
                 </span>
-            </div>
-            <div onpointerdown="abrirMicrofone(event)" 
-                onpointerup="fecharMicrofone(event)" 
-                ontouchmove="toucheMove(event)"
-                ontouchend="dragEnd(event)"
-                ondrag="dragEvt(event)"
-                ondragend="dragEnd(event)"
-                id="icone-microfone" class="microfone-fechado">
-                <span style="background-image:url(assets/img/microfone.svg);width:24px;height:30px"></span>
             </div>
         </div>
         <div id="audio-lock" class="hide">

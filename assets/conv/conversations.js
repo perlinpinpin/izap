@@ -227,10 +227,6 @@ function getUsersByTimeStamp () {
 function getFotoPath (id) {
     return users [id].foto;
 }
-function printFotoPath (id, size) {
-    let svg = '<image id="image' + id + '" width="' + size + '" height="' + size + '" xlink:href="' + users [id].foto + '"/>'
-    document.write (svg);
-}
 
 function printFoto (id, size) {
     let svg = '<img id="image' + id + '" width="' + size + '" height="' + size + '" src="' + users [id].foto + '" style="border-radius:'+ (size / 2) +'px"/>'

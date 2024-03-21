@@ -16,6 +16,7 @@ body {
     height: 85px;
     min-height: 85px;
     position: relative;
+    width: 100vw;
 }
 
 .main-menu-item {
@@ -233,6 +234,8 @@ body {
 
 .div-digitacao {
     align-items: end;
+    position: absolute;
+    bottom: 10px;
 }
 
 .div-digitacao-inter {
@@ -276,24 +279,24 @@ body {
 }
 
 #div-audio-unlocked {
-    position:absolute;
-    top: 734px; 
-    display:flex;
-    align-items:center;
+    position: fixed;
+    bottom: 10px; 
+    display: flex;
+    align-items: center;
     background:#ffffff;
     max-height: 30px;
-    border-radius:20px;
-    left:5px;
-    padding-top:8px;
+    border-radius: 20px;
+    left: 5px;
+    padding-top: 8px;
     padding-left: 12px;
     padding-right: 12px;
     padding-bottom: 8px;
 }
 
 #div-audio-tolock {
-    position:absolute;
-    top: 624px; 
-    background:#ffffff;
+    position: fixed;
+    bottom: 10px; 
+    background: #ffffff;
     height: 150px;
     width: 30px;
     border-radius: 20px;
@@ -302,8 +305,8 @@ body {
 }
 
 #label-control-audio {
-    position:absolute;  
-    top: 545px; 
+    position: fixed;  
+    bottom: 165px; 
     background:#ffffff;
     border-radius: 20px;
     margin-left: 5px;
@@ -321,7 +324,7 @@ body {
     font-weight: 700;
     font-size: 22px;
     color: black;
-    margin-right:12px;
+    margin-right: 12px;
 }
 
 #deslize-label {
@@ -329,7 +332,7 @@ body {
     font-weight: 700;
     font-size: 15px;
     color: black;
-    margin-left:12px;
+    margin-left: 12px;
     margin-right: 40px;
 }
 
@@ -366,11 +369,10 @@ img {
 }
 
 #audio-lock {
-    position: absolute;
-    /* bottom: -10px;
-    left:0px; */
-    /* width: calc(100vw - 20px); */
-    top:600px;
+    position: fixed;
+    bottom: -10px;
+    width: calc(100% - 24px);
+    left: 0px;
     background:#ffffff;
     max-height: 109px;
     height: 190px;
@@ -481,20 +483,19 @@ img {
 
 /******************************* Espaço interação fechado *************************/
 
-.espaco-interacao {
-    /* bottom: 10px; */
-    height: 40px;
-    width: 90vw;
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    background-color: white;
-    margin-bottom: 5px;
+#espaco-interacao {
+    position: absolute;
+    bottom: 5px;
+    max-width: 100wv;
+    width: 100vw;
+    align-items: end;
+    z-index: 10;
 }
 
-.espaco-interacao-opened {
-    /* bottom: 210px; */
-    transition: 0.2s;
+#content-interacao {
+    border-radius: 18px;
+    background-color: white;
+    margin-bottom: 5px;
 }
 
 #espaco-interacao-emoji {
@@ -504,16 +505,16 @@ img {
 
 #espaco-interacao-mensagem {
     display: inline-block;
-    width: calc(30vw);
     color: #999999;
     margin-left: 5px;
     margin-right: 5px;
-    padding-right: 25px;
+    padding-right: 5px;
     padding-left: 5px;
     font-weight: 700;
     font-size: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
+    width: calc(100vw - 250px);
 }
 
 #espaco-interacao-arquivo {
@@ -530,11 +531,11 @@ img {
 
 #espaco-interacao-reais {
     margin-left: 4px;
-    padding: 5px;
+    padding: 5px 0px 5px 0px;
 }
 
 #espaco-interacao-camera {
     margin-left: 4px;
-    padding: 5px;
+    padding: 5px 0px 5px 0px;
     padding-right: 8px;
 }

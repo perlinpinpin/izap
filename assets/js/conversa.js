@@ -67,10 +67,17 @@ function closeAll () {
 }
 
 function responder () {
-    menuInteracao('mensagem');
+    // menuInteracao ('mensagem');
     responderTo = selecionados [0].msg.mess_id;
+    document.getElementById ('resp-ancora-int').innerHTML = respostaA (selecionados [0].msg);
     document.getElementById ('resp-ancora').innerHTML = respostaA (selecionados [0].msg);
     clearSelecao ();
+}
+
+function clearResponder () {
+    responderTo = null;
+    document.getElementById ('resp-ancora-int').innerHTML = '';
+    document.getElementById ('resp-ancora').innerHTML = '';
 }
 
 function menu (item) {
@@ -521,7 +528,7 @@ function addNovaMensagem (tipo, content) {
         'apagada': false,
         'resposta' : responderTo
     };
-    responderTo = null;
+    clearResponder ();
     users [id].conversa.push (msg);
     users [id].timestamp = new Date ().getTime ();
     usersUpdated ();
@@ -681,16 +688,15 @@ function computarSizes () {
         document.getElementById ('conversa').style.maxHeight = 'calc(' + window.visualViewport.height + 'px - 140px)';
     }
     // document.getElementById ('conversa').style.maxWidth = 'calc(' + window.visualViewport.width + 'px)';
-    document.getElementById ('espaco-interacao-mensagem').style.maxWidth = 'calc(' + window.visualViewport.width + 'px - 300px)';
-    document.getElementById ('espaco-interacao-mensagem').style.width = 'calc(' + window.visualViewport.width + 'px - 300px)';
-    document.getElementById ('espaco-interacao').style.width = 'calc(' + window.visualViewport.width + 'px - 40px)';
-    // document.getElementById ('audio-lock').style.maxWidth = 'calc(' + window.visualViewport.width + 'px)';
-    document.getElementById ('div-audio-unlocked').style.top = 'calc(' + window.visualViewport.height + 'px - 50px)';
-    document.getElementById ('div-audio-tolock').style.top = 'calc(' + window.visualViewport.height + 'px - 160px)';
-    document.getElementById ('label-control-audio').style.top = 'calc(' + window.visualViewport.height + 'px - 239px)';
-    document.getElementById ('audio-lock').style.top = 'calc(' + window.visualViewport.height + 'px - 120px)';
+    // document.getElementById ('espaco-interacao-mensagem').style.maxWidth = 'calc(' + window.visualViewport.width + 'px - 300px)';
+    // document.getElementById ('espaco-interacao-mensagem').style.width = 'calc(' + window.visualViewport.width + 'px - 300px)';
+    // document.getElementById ('espaco-interacao').style.width = 'calc(' + window.visualViewport.width + 'px - 40px)';
+    // document.getElementById ('div-audio-unlocked').style.top = 'calc(' + window.visualViewport.height + 'px - 50px)';
+    // document.getElementById ('div-audio-tolock').style.top = 'calc(' + window.visualViewport.height + 'px - 160px)';
+    // document.getElementById ('label-control-audio').style.top = 'calc(' + window.visualViewport.height + 'px - 239px)';
+    // document.getElementById ('audio-lock').style.top = 'calc(' + window.visualViewport.height + 'px - 120px)';
     // loggar(window.visualViewport.width)  
-    setTimeout (() => {document.getElementById ('cabecalho').scrollIntoView ();}, 100);
+    setTimeout (() => {document.getElementById ('cabecalho').scrollIntoView ();}, 1000);
 }
 
 window.addEventListener ('load', () => {

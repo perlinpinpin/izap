@@ -10,7 +10,6 @@ function abrirConversa (evt, id) {
 
 function lista_contatos_html () {
     let content = '';
-    for (let index = 0; index < 5; index++) {
     for (let i = 0; i < users.length; i++) {
         const u = users [i];
         content += '<div id="contato-' + u.id + '" onclick="abrirConversa(event,' + u.id + ')"  class="menu-item">';
@@ -20,7 +19,6 @@ function lista_contatos_html () {
         content += '        <div class="status">' + u.status + '</div>'
         content += '    </div>'
         content += '</div>'
-    }
     }
     document.write (content);
 }
