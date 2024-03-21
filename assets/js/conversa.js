@@ -435,6 +435,7 @@ function criarMsg (msg) {
             box.style.paddingTop = '10px';
             box.style.paddingRight = '10px';
             box.style.paddingBottom = '10px';
+            box.style.maxWidth = '80vw';
         }
         else if (msg.tipo == 'au') {
             content += '<div style="display: flex; align-items:center">';
@@ -474,6 +475,7 @@ function criarMsg (msg) {
             box.style.paddingTop = '5px';
             box.style.paddingRight = '10px';
             box.style.paddingBottom = '5px';
+            box.style.maxWidth = '230px';
         }
         else if (msg.tipo == 'img' || msg.tipo == 'mimg') {
             content += '<img width="200px" src="' + msg.content + '" />';
