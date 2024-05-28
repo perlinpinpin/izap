@@ -327,7 +327,7 @@ function respostaA (msg) {
         content += '</div>';
     }
     else {
-        content += '<img style="touch-action: none;" width="50px" src="' + msg.content + '" />';
+        content += '<img style="touch-action: none;pointer-events:none;" width="50px" src="' + msg.content + '" />';
     }
     if (msg.fluxo == 'out') {
         container += '<div class="msg-resp-out" onclick="scrollToMsg (\'' + msg.mess_id + '\')">';
