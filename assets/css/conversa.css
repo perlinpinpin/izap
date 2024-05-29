@@ -27,7 +27,7 @@ body {
 
 #menu-selecionado {
     position: absolute;
-    right: 25px;
+    right: 20px;
     top: 25px;
 }
 
@@ -56,8 +56,14 @@ body {
 .o2 {
     order: 2;
 }
-
-@media (max-width: 385px) {
+#favoritar-sel span {
+    padding-left: 4px;
+}
+#favoritar-sel img {
+    position: relative;
+    left: 4px;
+}
+@media (max-width: 379px) {
     #menu-selecionado {
         position: absolute;
         right: 0px;
@@ -130,7 +136,7 @@ body {
 
 #label-nb-selecionados {
     position: absolute;
-    left: 45px;
+    left: 43px;
     top: 46px;
     color: #FBF3F3;
 }
