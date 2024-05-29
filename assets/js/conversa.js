@@ -479,7 +479,11 @@ function criarMsg (msg) {
             box.style.maxWidth = '230px';
         }
         else if (msg.tipo == 'img' || msg.tipo == 'mimg') {
-            content += '<img width="200px" src="' + msg.content + '" />';
+            // content += '<img width="200px" src="' + msg.content + '" />';
+            content += '<div style="background-image: url(' + msg.content + '); width: 200px; background-size: contain;background-repeat: no-repeat;";>'
+            content += '    <img width="200px" src="' + msg.content + '" style="visibility: hidden" />';
+            content += '</div>';
+            console.log();
             if (msg.fluxo == 'out') {
                 content += '<span class="msg-img-time-out">' + msg.hora + '</span>';
                 content += '<span class="msg-img-lido-out">';
