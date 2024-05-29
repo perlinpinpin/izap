@@ -35,7 +35,12 @@ function manageSelecionados () {
 }
 
 let mousePressed = false;
+let timer = null;
 function mouseUp (id) {
+    if (timer != null) {
+        clearTimeout (timer);
+        timer = null;
+    }
     if (mousePressed == false) return;
     mousePressed = false;
     diff = new Date ().getTime () - refTime; 
@@ -63,7 +68,7 @@ function mouseDown (id) {
         if (selecionados [i] == selecionado) return;
     }
     selecionado.style.backgroundColor = '#eeeeee';
-    setTimeout (mouseUp, longPressDelay + 1);
+    timer = setTimeout (mouseUp, longPressDelay + 1);
 }
 
 function chat_html () {

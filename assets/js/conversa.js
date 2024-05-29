@@ -22,9 +22,6 @@ function abrirMenuArquivo () {
     fecharDigitarMensagem ();
     document.getElementById ("menu-arquivo").style.display = 'block';
     computarSizes ();
-    // document.getElementById ("espaco-interacao").classList.add ('espaco-interacao-opened');
-    // document.getElementById ('conversa').classList.add ('conversa-opened');
-    // document.getElementById ('icone-microfone').classList.add ('microfone-arquivo-aberto');
 }
 
 function fecharMenuArquivo () {
@@ -32,10 +29,6 @@ function fecharMenuArquivo () {
     arquivoMenuAberto = false;
     document.getElementById ("menu-arquivo").style.display = 'none';
     computarSizes ();
-    // document.getElementById ("menu-arquivo").classList.remove ('menu-open');
-    // document.getElementById ("espaco-interacao").classList.remove ('espaco-interacao-opened');
-    // document.getElementById ('conversa').classList.remove ('conversa-opened');
-    // document.getElementById ('icone-microfone').classList.remove ('microfone-arquivo-aberto');
 }
 
 let digitarMesagemAberto = false;
@@ -67,7 +60,6 @@ function closeAll () {
 }
 
 function responder () {
-    // menuInteracao ('mensagem');
     responderTo = selecionados [0].msg.mess_id;
     document.getElementById ('resp-ancora-int').innerHTML = respostaA (selecionados [0].msg);
     document.getElementById ('resp-ancora').innerHTML = respostaA (selecionados [0].msg);
@@ -249,6 +241,7 @@ function removeSelecao () {
 }
 
 let itemPressed = false;
+let timer = null;
 function itemConversaPress (id, evt) {
     xPressed = evt.x;
     yPressed = evt.y;
@@ -258,7 +251,7 @@ function itemConversaPress (id, evt) {
     refTime = new Date ().getTime ();
     selecionado = document.getElementById ('mess-' + id);
     selecionado.style.background = '#eeeeee';
-    setTimeout (itemConversaRelease, 400);
+    timer = setTimeout (itemConversaRelease, 400);
 }
 
 let dragging = false;
@@ -274,6 +267,10 @@ function itemDragging (evt) {
 }
 
 function itemConversaRelease () {
+    if (timer != null) {
+        clearTimeout (timer);
+        timer = null;
+    }
     if (dragging) {
         itemPressed = false;
         dragging = false;
@@ -289,7 +286,7 @@ function itemConversaRelease () {
     if (itemPressed == false) return;
     itemPressed = false;
     diff = new Date ().getTime () - refTime; 
-    if (diff > 400) {
+    if (diff > 380) {
         manageSelecionados ();
     }
     else {
