@@ -12,7 +12,12 @@ function visto () {
 }
 
 function foto () {
-    document.write ('<img width="60px" src="' + users [id].foto +'"/>');
+    //document.write ('<img width="60px" src="' + users [id].foto +'"/>');
+    content = ''
+    content += '    <div class="menu-icone">';
+    content += '        <div class="icone" style="background-image: url(' + users [id].foto + ')" ></div>';
+    content += '    </div>';
+    document.write (content);
 }
 
 let arquivoMenuAberto = false;

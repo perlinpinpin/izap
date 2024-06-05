@@ -190,3 +190,18 @@
     color: #000000;
     padding: 10px 10px 10px 10px;
 }
+
+.menu-icone {
+    min-width: 80px;
+    text-align: center;
+}
+
+.icone {
+    width: 55px;
+    height: 55px;
+    border-radius: 60px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+}

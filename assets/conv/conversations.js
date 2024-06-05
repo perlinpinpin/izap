@@ -7,6 +7,7 @@ let users = [
         'foto': 'assets/conv/perfil/0.png',
         'status': 'Mensagem para mim.',
         'visto' : '8:10',
+        'frequente' : false,
         'conversa' : [],
     },
     {
@@ -17,6 +18,7 @@ let users = [
         'foto': 'assets/conv/perfil/1.png',
         'status': 'Olá! Estou usando o WhatsApp.',
         'visto' : '8:15',
+        'frequente' : true,
         'conversa' : [
             {
                 'mess_id' : 'm001',
@@ -109,6 +111,7 @@ let users = [
         'foto': 'assets/conv/perfil/2.png',
         'status': 'Disponível',
         'visto' : '8:20',
+        'frequente' : true,
         'conversa' : [
             {
                 'mess_id' : 'm001',
@@ -142,6 +145,7 @@ let users = [
         'foto': 'assets/conv/perfil/3.png',
         'status': 'Amizade é tudo!',
         'visto' : '8:25',
+        'frequente' : true,
         'conversa' : [
             {
                 'mess_id' : 'm001',
@@ -186,6 +190,7 @@ let users = [
         'foto': 'assets/conv/perfil/4.png',
         'status': 'Disponível',
         'visto' : '8:30',
+        'frequente' : false,
         'conversa' : []
     }
 ];

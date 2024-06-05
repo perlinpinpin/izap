@@ -83,8 +83,11 @@ function chat_html () {
             let msg = cvs [cvs.length - 1];
             content += '<div id="bck-conversa-' + u.id + '" class="msg" onpointerdown="mouseDown(' + u.id + ')" onpointerup="mouseUp(' + u.id + ')">';
             content += '    <div class="fc">';
-            content += '        <div>';
-            content += '            <img class="foto-msg" src="' + u.foto +'">';
+            // content += '        <div>';
+            // content += '            <img class="foto-msg" src="' + u.foto +'">';
+            // content += '        </div>';
+            content += '        <div class="menu-icone">';
+            content += '            <div class="icone" style="background-image: url(' + u.foto + ')" ></div>';
             content += '        </div>';
             content += '        <div>';
             content += '            <div class="nome_chat">'+ u.nome +'</div>';
