@@ -29,7 +29,8 @@ let users = [
                 'hora': '8:20',
                 'lido': true,
                 'apagada': false,
-                'resposta': null
+                'resposta': null,
+                'encaminhada': false,
             },
             {
                 'mess_id' : 'm002',
@@ -40,7 +41,8 @@ let users = [
                 'hora': '8:45',
                 'lido': true,
                 'apagada': false,
-                'resposta': 'm001'
+                'resposta': 'm001',
+                'encaminhada': false,
             },
             {
                 'mess_id' : 'm003',
@@ -51,7 +53,8 @@ let users = [
                 'hora': '8:53',
                 'lido': true,
                 'apagada': false,
-                'resposta': 'm002'
+                'resposta': 'm002',
+                'encaminhada': false,
             },
             {
                 'mess_id' : 'a001',
@@ -62,7 +65,8 @@ let users = [
                 'hora': '15:20',
                 'lido': true,
                 'apagada': false,
-                'resposta': 'm003'
+                'resposta': 'm003',
+                'encaminhada': false,
             },
             {
                 'mess_id' : 'a002',
@@ -73,7 +77,8 @@ let users = [
                 'hora': '15:20',
                 'lido': true,
                 'apagada': false,
-                'resposta': 'a001'
+                'resposta': 'a001',
+                'encaminhada': false,
             },
             {
                 'mess_id' : 'm005',
@@ -88,7 +93,8 @@ let users = [
                 'hora': '15:25',
                 'lido': false,
                 'apagada': false,
-                'resposta': 'm001'
+                'resposta': 'm001',
+                'encaminhada': false,
             },
             {
                 'mess_id' : 'm006',
@@ -99,7 +105,8 @@ let users = [
                 'hora': '15:27',
                 'lido': false,
                 'apagada': false,
-                'resposta': 'm005'
+                'resposta': 'm005',
+                'encaminhada': false,
             }
         ]
     },
@@ -109,7 +116,7 @@ let users = [
         'nome': 'Maria',
         'nome_expandido': 'Maria',
         'foto': 'assets/conv/perfil/2.png',
-        'status': 'Disponível',
+        'status': '✨✨✨',
         'visto' : '8:20',
         'frequente' : true,
         'conversa' : [
@@ -122,7 +129,8 @@ let users = [
                 'hora': '8:20',
                 'lido': true,
                 'apagada': false,
-                'resposta': null
+                'resposta': null,
+                'encaminhada': false,
             },
             {
                 'mess_id' : 'm002',
@@ -133,7 +141,8 @@ let users = [
                 'hora': '8:45',
                 'lido': true,
                 'apagada': false,
-                'resposta': null
+                'resposta': null,
+                'encaminhada': false,
             }
         ]
     },
@@ -156,7 +165,8 @@ let users = [
                 'hora': '8:20',
                 'lido': true,
                 'apagada': false,
-                'resposta': null
+                'resposta': null,
+                'encaminhada': false,
             },
             {
                 'mess_id' : 'm002',
@@ -167,7 +177,8 @@ let users = [
                 'hora': '8:45',
                 'lido': true,
                 'apagada': false,
-                'resposta': null
+                'resposta': null,
+                'encaminhada': false,
             },
             {
                 'mess_id' : 'm003',
@@ -178,7 +189,8 @@ let users = [
                 'hora': '8:20',
                 'lido': true,
                 'apagada': true,
-                'resposta': null
+                'resposta': null,
+                'encaminhada': false,
             }
         ]
     },
@@ -188,8 +200,74 @@ let users = [
         'nome': 'Paula',
         'nome_expandido': 'Paula',
         'foto': 'assets/conv/perfil/4.png',
-        'status': 'Disponível',
+        'status': 'Quem planta colhe',
+        'visto' : '8:55',
+        'frequente' : false,
+        'conversa' : []
+    },
+    {
+        'timestamp': 6,
+        'id': 5,
+        'nome': 'Rodrigo',
+        'nome_expandido': 'Rodrigo',
+        'foto': 'assets/conv/perfil/5.png',
+        'status': 'A vida pode ser simples, só escolher as coisas certas',
+        'visto' : '9:30',
+        'frequente' : false,
+        'conversa' : []
+    },
+    {
+        'timestamp': 7,
+        'id': 6,
+        'nome': 'Sebastião',
+        'nome_expandido': 'Sebastião',
+        'foto': 'assets/conv/perfil/6.png',
+        'status': 'Ela é luz. Contagia o ambiente de alegria.✨',
         'visto' : '8:30',
+        'frequente' : false,
+        'conversa' : []
+    },
+    {
+        'timestamp': 8,
+        'id': 7,
+        'nome': 'Junior',
+        'nome_expandido': 'Junior',
+        'foto': 'assets/conv/perfil/7.png',
+        'status': 'Desafiando os meus limites todos os dias! 💪🏼',
+        'visto' : '8:30',
+        'frequente' : false,
+        'conversa' : []
+    },
+    {
+        'timestamp': 9,
+        'id': 8,
+        'nome': 'Anne',
+        'nome_expandido': 'Anne',
+        'foto': 'assets/conv/perfil/8.png',
+        'status': 'Acredite, sempre tem algo bom guardado para você 🙌🏻',
+        'visto' : '8:35',
+        'frequente' : false,
+        'conversa' : []
+    },
+    {
+        'timestamp': 10,
+        'id': 9,
+        'nome': 'Ronald',
+        'nome_expandido': 'Ronald',
+        'foto': 'assets/conv/perfil/9.png',
+        'status': 'Transformando os meus erros em sementes. &#129716;',
+        'visto' : '8:42',
+        'frequente' : false,
+        'conversa' : []
+    },
+    {
+        'timestamp': 11,
+        'id': 10,
+        'nome': 'Tereza',
+        'nome_expandido': 'Tereza',
+        'foto': 'assets/conv/perfil/10.png',
+        'status': 'Perfume a vida com momentos de beleza. &#127801;',
+        'visto' : '8:55',
         'frequente' : false,
         'conversa' : []
     }

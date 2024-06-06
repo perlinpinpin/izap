@@ -71,6 +71,19 @@ function responder () {
     clearSelecao ();
 }
 
+function encaminhar () {
+    let encaminhar = {
+        from: id,
+        msgs: [],
+    };
+    for (let i = 0; i < selecionados.length; i++) {
+        const el = selecionados[i];
+        encaminhar.msgs.push (el.msg);
+    }
+    sessionStorage.setItem ('encaminhar', JSON.stringify (encaminhar));
+    window.location = 'encaminhar.html';
+}
+
 function clearResponder () {
     responderTo = null;
     document.getElementById ('resp-ancora-int').innerHTML = '';
@@ -90,7 +103,7 @@ function menuSel (item) {
     else if (item == 'responder-sel') execComBckFeedback ('responder-sel', '#81B8B2', responder);
     else if (item == 'favoritar-sel') execComBckFeedback ('favoritar-sel', '#81B8B2', naoImplementado);
     else if (item == 'apagar-sel') execComBckFeedback ('apagar-sel', '#81B8B2', removeSelecao);
-    else if (item == 'encaminhar-sel') execComBckFeedback ('encaminhar-sel', '#81B8B2', naoImplementado);
+    else if (item == 'encaminhar-sel') execComBckFeedback ('encaminhar-sel', '#81B8B2', encaminhar);
     else if (item == 'outros-sel') execComBckFeedback ('outros-sel', '#81B8B2', naoImplementado);
 }
 
@@ -187,10 +200,8 @@ function manageSelecionados () {
     }
     if (selecionados.length > 1 || apagados) {
         document.getElementById ('responder-sel').style.display = 'none';
-        document.getElementById ('encaminhar-sel').style.display = 'none';
     } else {
         document.getElementById ('responder-sel').style.display = 'flex';
-        document.getElementById ('encaminhar-sel').style.display = 'flex';
     }
     if (apagados) {
         document.getElementById ('favoritar-sel').style.display = 'none';
@@ -411,6 +422,9 @@ function criarMsg (msg) {
                 }
             }
         }
+        if (msg.encaminhada) {
+            content = '<div class="msg-encaminhada">encaminhada</div>'
+        }
         if (msg.tipo == 'txt') {
             for (let i = 0; i < msg.content.length; i++) {
                 if (i == msg.content.length - 1) {
@@ -481,7 +495,6 @@ function criarMsg (msg) {
             box.style.maxWidth = '230px';
         }
         else if (msg.tipo == 'img' || msg.tipo == 'mimg') {
-            // content += '<img width="200px" src="' + msg.content + '" />';
             content += '<div style="background-image: url(' + msg.content + '); width: 200px; background-size: contain;background-repeat: no-repeat;";>'
             content += '    <img width="200px" src="' + msg.content + '" style="visibility: hidden" />';
             content += '</div>';

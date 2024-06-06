@@ -312,7 +312,6 @@ body {
     background: #008069;
     color:white;
     padding: 8px 5px 8px 5px;
-
 }
 
 .digitacao-input:focus {
@@ -592,4 +591,11 @@ img {
     background-size: cover;
     background-position: center;
     margin: auto;
+}
+
+.msg-encaminhada {
+    color: #666;
+    font-style: italic;
+    font-family: 10px;
+    padding-bottom: 5px;
 }

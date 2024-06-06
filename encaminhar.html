@@ -16,27 +16,33 @@
     <script type="text/javascript" charset="UTF-8" src="assets/js/encaminhar.js"></script>
 </head>
 <body>
-    <div class="fc" id="cabecalho">
-        <div onclick="menu('voltar')" id="voltar" class="fc">
-            <img src="assets/img/voltar.svg">
-            <div id="titulo"> ENCAMINHAR PARA... </div>
-        </div>
-        <div class="fc">
-            <div onclick="menu('search')" id="search">
-                <img src="assets/img/menu-search.svg">
+    <main class="interface">
+        <div class="fc" id="cabecalho">
+            <div onclick="menu('voltar')" id="voltar" class="fc">
+                <img src="assets/img/voltar.svg">
+                <div id="titulo"> ENCAMINHAR PARA... </div>
+            </div>
+            <div class="fc">
+                <div onclick="menu('search')" id="search">
+                    <img src="assets/img/menu-search.svg">
+                </div>
             </div>
         </div>
-    </div>
-    <div id="static-menu" class="mt-5">
-        <div class="menu-item" onclick="menu('status')" id="novo-grupo">
-            <div class="menu-icone"><img src="assets/img/status.png"></div>
-            <div class="menu-label">STATUS</div>
+        <div id="static-menu" class="mt-5">
+            <div class="contato-item" onclick="menu('status')" id="novo-grupo">
+                <div class="contato-icone"><img src="assets/img/status.png"></div>
+                <div class="contato-label">STATUS</div>
+            </div>
+            <div class="menu-categoria">CONTATOS FREQUENTES</div>
+            <script>lista_contatos_html (true);</script>
+            <div class="menu-categoria">CONTATOS RECENTES</div>
+            <script>lista_contatos_html (false);</script>
         </div>
-        <div class="menu-categoria">CONTATOS FREQUENTES</div>
-        <script>lista_contatos_html (true);</script>
-        <div class="menu-categoria">CONTATOS RECENTES</div>
-        <script>lista_contatos_html (false);</script>
-    </div>
+        <div id="lista-selecionados">
+            <div id="nome-selecionados"></div>
+            <button id="button-encaminhar" onclick="encaminhar()">ENCAMINHAR</button>
+        </div>
+    </main>
     <div id="nao_implementado" class="transparento hide">
         <div id="nao_implementado-text">
             FUNCÃO NÃO DISPONÍVEL NESTA VERSÃO

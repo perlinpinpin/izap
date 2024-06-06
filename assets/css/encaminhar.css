@@ -1,14 +1,54 @@
+.interface {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    min-height: 100vh;
+}
+
 /* Cabeçalho */
 
 #cabecalho {
     background-color: #008069;
-    height: 80px;
-    min-height: 80px;
+    flex: 0 0 80px;
     justify-content: space-between;
     padding-left: 5px;
     padding-right: 5px;
     position: sticky;
     top: 0;
+}
+
+#static-menu {
+    flex: 1 1 0;
+    overflow: auto;
+    background-color: #f8f8f8;
+}
+
+#lista-selecionados {
+    flex: 0 0 50px;
+    background-color: white;
+    display: none;
+    align-items: center;
+    padding: 0px 5px 0px 5px;
+    border-top: 1px solid #f0f0f0;
+}
+
+#nome-selecionados {
+    flex: 1 1 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    padding: 0px 5px 0px 5px;
+}
+
+#button-encaminhar {
+    flex: 0 0 50px;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 18px;
+    background: #008069;
+    color:white;
+    padding: 8px 5px 8px 5px;
+    cursor: pointer;
 }
 
 #voltar {
@@ -18,7 +58,6 @@
 }
 
 #titulo {
-    font-family: 'Archivo', sans-serif;
     font-weight: 700;
     font-size: 18px;
     color: #FFFFFF;
@@ -31,16 +70,21 @@
 
 /* menu static */
 
-.menu-item {
+.contato-item {
     display: flex;
     align-items: center;
     padding-top: 5px;
-    /* padding-bottom: 5px; */
+    max-width: 100vw;
 }
 
-.menu-icone {
-    min-width: 80px;
+.contato-icone {
+    flex: 0 0 80px;
     text-align: center;
+}
+
+.contato-detalhes {
+    flex: 0 0 calc(100vw - 85px);
+    margin-right: 5px;
 }
 
 .icone {
@@ -53,7 +97,29 @@
     margin: auto;
 }
 
-.menu-label {
+.nome {
+    font-weight: 700;
+    font-size: 20px;
+    color: #000000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    padding-right: 5px;
+    max-width: calc(100vw - 85px);
+}
+
+.status {
+    font-weight: 400;
+    font-size: 15px;
+    color: #6B6A6A;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    padding-right: 5px;
+    max-width: calc(100vw - 85px);
+}
+
+.contato-label {
     font-family: 'Archivo', sans-serif;
     font-weight: 700;
     font-size: 16px;
@@ -61,25 +127,9 @@
 }
 
 .menu-categoria {
-    font-family: 'Archivo', sans-serif;
     font-weight: 700;
     font-size: 15px;
     color: #999999; 
     padding-left: 20px;
     padding-top: 10px;
 }
-
-.nome {
-    font-family: 'Archivo', sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    color: #000000;   
-}
-
-.status {
-    font-family: 'Archivo', sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    color: #6B6A6A;   
-}
-
